@@ -1,0 +1,10 @@
+<h1><%= @current_user.name %>'s PawPrints</h1>
+
+<% if @current_user.role.include?("sitter")%>
+  <h2>My Clients</h2>
+<% end %>
+
+
+<% if @current_user.role.include?("owner")%>
+  <h2>My Pets</h2>
+<% end %>

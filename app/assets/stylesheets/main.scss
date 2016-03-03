@@ -1,0 +1,47 @@
+body {
+  background-color: #78e4c4;
+}
+
+h1 {
+  text-align: center;
+}
+
+.user-type {
+  margin-left: 350px;
+  padding-top: 150px;
+}
+
+.owner {
+  display: inline-block;
+  background-color: #b0096d;
+  height: 200px;
+  width: 400px;
+
+}
+
+.owner h2 {
+  padding-top: 60px;
+  text-align: center;
+
+}
+
+.owner a {
+  color: black;
+}
+
+.sitter {
+  display: inline-block;
+  background-color: #2ae21a;
+  height: 200px;
+  width: 400px;
+}
+
+.sitter h2 {
+  padding-top: 60px;
+  text-align: center;
+
+}
+
+.sitter a {
+  color: black;
+}

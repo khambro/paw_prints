@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pawprints</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <div class="page-wrap">
+  <div class="wrap">
+    <div id="header">
+      <!-- <%= link_to image_tag("logo.jpg"), root_path %> -->
+      <ul class="nav">
+        <% if !@current_user %>
+          <li><button><%= link_to "Sign Up", new_owner_path %></button></li>
+          <li><button><%= link_to "Sign In", "/user-sign-in" %></button></li>
+        <% else %>
+          <li><button><%= link_to "Sign Out", sign_out_path %></button></li>
+          <li><button><%= link_to "My Account", account_path %></button></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <% if flash.key?(:notice) %>
+    <div class = 'flash-alert'>
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+
+<%= yield %>
+
+</div>
+
+</body>
+</html>
