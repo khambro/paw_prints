@@ -1,10 +1,27 @@
-<h1><%= @current_user.name %>'s PawPrints</h1>
+<h1><%= current_user.name %>'s PawPrints</h1>
 
-<% if @current_user.role.include?("sitter")%>
+<% if !current_user.role.include?("sitter")%>
+  <h5>I am also a sitter</h5>
+<% end %>
+
+<% if !current_user.role.include?("owner")%>
+  <h5>I am also a pet owner</h5>
+<% end %>
+
+<% if current_user.role.include?("sitter")%>
+
+  <div class="new-client">
+    <h4>Add new client</h4>
+    <%= form_tag "/new-sitter" do %>
+      <input type="hidden" name="user[role]" value="sitter"/>
+      <%= render partial: "new_user_form" %>
+      <%= text_field_tag "user[pet_id]", nil, placeholder: "pet", class: "pet", :required => true %>
+      <%= text_field_tag "user[pet_id]", nil, placeholder: "pet2", class: "pet2" %>
+    <%end%>
   <h2>My Clients</h2>
 <% end %>
 
 
-<% if @current_user.role.include?("owner")%>
+<% if current_user.role.include?("owner")%>
   <h2>My Pets</h2>
 <% end %>

@@ -7,14 +7,14 @@
 
   <%= form_tag "/new-pet" do %>
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-    <input type="hidden" name="pet[owner]" value="<%= @current_user.id %>" />
+    <input type="hidden" name="pet[owner]" value="<%= current_user.id %>" />
     <%= text_field_tag "pet[name]", nil, placeholder: "name", class: "name", :required => true  %>
     <br>
     <%= text_field_tag "pet[breed]", nil, placeholder: "breed", class: "breed", :required => true  %>
     <br>
     <%= password_field_tag "pet[color]", nil, placeholder: "color", class: "color", :required => true  %>
     <br>
-  
+
     <%= submit_tag %>
   <%end%>
 

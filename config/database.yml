@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: pawprints_production
-  username: pawprints
+  username: khambro
   password: <%= ENV['PAWPRINTS_DATABASE_PASSWORD'] %>

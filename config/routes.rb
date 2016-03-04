@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   get "/new-pet", to: "pets#new", as: :new_pet
 
+  get "/images", to: "instagram#show"
+
 
 
 
