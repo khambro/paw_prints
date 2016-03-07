@@ -1,27 +1,49 @@
 <h1><%= current_user.name %>'s PawPrints</h1>
 
-<% if !current_user.role.include?("sitter")%>
+<% if !current_user.user_roles.include?("sitter")%>
   <h5>I am also a sitter</h5>
 <% end %>
 
-<% if !current_user.role.include?("owner")%>
+<% if !current_user.user_roles.include?("owner")%>
   <h5>I am also a pet owner</h5>
 <% end %>
 
-<% if current_user.role.include?("sitter")%>
+<% if current_user.user_roles.include?("sitter")%>
 
   <div class="new-client">
     <h4>Add new client</h4>
-    <%= form_tag "/new-sitter" do %>
-      <input type="hidden" name="user[role]" value="sitter"/>
-      <%= render partial: "new_user_form" %>
-      <%= text_field_tag "user[pet_id]", nil, placeholder: "pet", class: "pet", :required => true %>
-      <%= text_field_tag "user[pet_id]", nil, placeholder: "pet2", class: "pet2" %>
-    <%end%>
+    <%= form_tag "/new-client" do %>
+      <input type="hidden" name="role[role]" value="owner"/>
+      <%= text_field_tag "unregistered[name]", nil, placeholder: "name", class: "name", :required => true %>
+      <%= email_field_tag "unregistered[email]", nil, placeholder: "email", class: "email", :required => true %>
+      <%= text_field_tag "unregistered[phone]", nil, placeholder: "phone", class: "phone", :required => true %>
+      <%= text_field_tag "pet[name]", nil, placeholder: "pet", class: "pet", :required => true %>
+      <!-- <%= text_field_tag "pet[name]", nil, placeholder: "pet2", class: "pet2" %> -->
+      <%= submit_tag "Add Client"%>
+    <% end %>
   <h2>My Clients</h2>
+  <div class= "clients">
+    <% @clients.each do |p|%>
+      <div class="deets">
+        <h3>Pet: <%= link_to p.name, "/pet/#{p.id}"%> </h3>
+        <% if p.unregistered %>
+          <h4>Owner: <%= p.unregistered.name %> </h4>
+          <h4>Contact info: <%= p.unregistered.phone %>
+          <%= p.unregistered.email %></h4>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
 <% end %>
 
-
-<% if current_user.role.include?("owner")%>
+<% if current_user.user_roles.include?("owner")%>
+  <h3 class="add-pet">Add Pet</h3>
+  <h3 class="show-form" style="display: none" >
+    <%= render partial: "shared/new_pet" %>
+  </h3>
   <h2>My Pets</h2>
+  <% @pets.each do |p|%>
+    <%= p.name%>
+  <% end %>
 <% end %>

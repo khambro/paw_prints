@@ -1,21 +1,18 @@
-<h1>Report Card</h1>
-
 
 <div class="new-pet">
 
-  <h1>Create a Report Card for NEED CURRENT PET!</h1>
+  <h1>Create a Report Card for <%= @pet.name %> </h1>
 
-  <%= form_tag "/report" do %>
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-    <input type="hidden" name="pet[owner]" value="<%= current_user.id %>" />
-    <%= text_field_tag "pet[name]", nil, placeholder: "name", class: "name", :required => true  %>
+  <%= form_tag "/report/:id" do %>
+    <input type="hidden" name="report[sitter_id]" value="<%= current_user.id %>" />
+    <%= text_field_tag "report[date]", nil, placeholder: "date", class: "date", :required => true  %>
     <br>
-    <%= text_field_tag "pet[breed]", nil, placeholder: "breed", class: "breed", :required => true  %>
+    <%= text_field_tag "report[activity]", nil, placeholder: "activity", class: "activity", :required => true  %>
     <br>
-    <%= password_field_tag "pet[color]", nil, placeholder: "color", class: "color", :required => true  %>
+    <%= text_field_tag "report[image]", nil, placeholder: "image", class: "image", :required => true  %>
     <br>
 
-    <%= submit_tag %>
+    <%= submit_tag "Send Report" %>
   <%end%>
 
 </div>

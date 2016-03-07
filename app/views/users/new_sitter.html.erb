@@ -3,7 +3,7 @@
   <h1>Sign Up</h1>
 
   <%= form_tag "/new-sitter" do %>
-    <input type="hidden" name="user[role]" value="sitter"/>
+    <input type="hidden" name="role[role]" value="sitter"/>
     <%= render partial: "new_user_form" %>
   <%end%>
   <div class="sign-in">Already have an account?<span><%= link_to "Sign In", "/user-sign-in" %></span></div>

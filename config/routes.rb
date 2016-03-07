@@ -10,12 +10,21 @@ Rails.application.routes.draw do
   post "/new-sitter", to: "users#sitter_create"
   get "/account", to: "users#account", as: :account
 
+  get "/new-client", to: "unregistered#new"
+  post "/new-client", to: "unregistered#unregistered_client_create"
+
+
   post "/sign-in", to: "sessions#sign_in", as: :sign_in
   get "/sign-out", to: "sessions#sign_out", as: :sign_out
 
   get "/new-pet", to: "pets#new", as: :new_pet
+  post "/new-pet", to: "pets#create"
+  get "/report/:id", to: "pets#report", as: :report
+  post "/report", to: "pets#create_report"
 
   get "/images", to: "instagram#show"
+
+  get "/pet/:id", to: "pets#show"
 
 
 
