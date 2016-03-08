@@ -2,8 +2,15 @@
 
   <h1>Create a Pet Profile!</h1>
 
+  <!-- this logic nees to be fixed. Doesn't work if someone is owner AND sitter -->
   <%= form_tag "/new-pet" do %>
-    <input type="hidden" name="pet[owner_id]" value="<%= current_user.id %>" />
+    <% if current_user.role == "owner" %>
+      <input type="hidden" name="pet[owner_id]" value="<%= current_user.id %>" />
+    <% elsif current_user.role == "sitter" %>
+      <input type="hidden" name="pet[owner_id]" value="<%= current_user.id %>" />
+    <% else %>
+      <input type="hidden" name="pet[unregistered_id]" value="<%= current_user.id %>" />
+    <%end%>
     <%= text_field_tag "pet[name]", nil, placeholder: "name", class: "name", :required => true  %>
     <br>
     <%= text_field_tag "pet[breed]", nil, placeholder: "breed", class: "breed", :required => true  %>

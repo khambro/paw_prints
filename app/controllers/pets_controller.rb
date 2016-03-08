@@ -16,9 +16,7 @@ class PetsController < ApplicationController
     end
   end
 
-  def create_report
-    @pet = Pet.find_by(id: params[:id])
-  end
+
 
   def show
     @pet = Pet.find_by(id: params[:id])

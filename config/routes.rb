@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get "/new-pet", to: "pets#new", as: :new_pet
   post "/new-pet", to: "pets#create"
   get "/report/:id", to: "pets#report", as: :report
-  post "/report", to: "pets#create_report"
+  post "/report/:id", to: "reports#create_report"
 
   get "/images", to: "instagram#show"
 
