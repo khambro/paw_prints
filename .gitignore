@@ -1,4 +1,6 @@
 
+.env
+
 # Ignore bundler config.
 /.bundle
 

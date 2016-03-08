@@ -41,10 +41,19 @@
 <% if current_user.user_roles.include?("owner")%>
   <h3 class="add-pet">Add Pet</h3>
   <h3 class="show-form" style="display: none" >
-    <%= render partial: "shared/new_pet" %>
+    <%= form_tag "/new-pet" do %>
+      <input type="hidden" name="pet[owner_id]" value="<%= current_user.id %>" />
+      <%= text_field_tag "pet[name]", nil, placeholder: "name", class: "name", :required => true  %>
+      <br>
+      <%= text_field_tag "pet[breed]", nil, placeholder: "breed", class: "breed", :required => true  %>
+      <br>
+      <%= text_field_tag "pet[color]", nil, placeholder: "color", class: "color", :required => true  %>
+      <br>
+      <%= submit_tag %>
+    <%end%>
   </h3>
   <h2>My Pets</h2>
   <% @pets.each do |p|%>
-    <%= p.name%>
+    <h3>Pet: <%= link_to p.name, "/pet/#{p.id}"%> </h3>
   <% end %>
 <% end %>

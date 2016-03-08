@@ -4,9 +4,9 @@
 
   <!-- this logic nees to be fixed. Doesn't work if someone is owner AND sitter -->
   <%= form_tag "/new-pet" do %>
-    <% if current_user.role == "owner" %>
+    <% if current_user.roles.include?("owner") %>
       <input type="hidden" name="pet[owner_id]" value="<%= current_user.id %>" />
-    <% elsif current_user.role == "sitter" %>
+    <% elsif current_user.roles.include?("sitter") %>
       <input type="hidden" name="pet[owner_id]" value="<%= current_user.id %>" />
     <% else %>
       <input type="hidden" name="pet[unregistered_id]" value="<%= current_user.id %>" />

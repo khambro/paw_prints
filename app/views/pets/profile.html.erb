@@ -1,7 +1,12 @@
-<h1>Profile</h1>
+<h1>Dashboard for <%= @pet.name %> </h1>
 
 
+<h2><%= @pet.name %> Reports</h2>
 
-<h4>link to add a pet</h4>
-
-<h2>My Pets</h2>
+<% @pet.reports.each do |r| %>
+  <%= r.created_at %>
+  <%= r.activity %>
+  <% r.images.each do |i| %>
+    <%= image_tag ("#{i.image_url}") %>
+  <% end  %>
+<% end  %>
