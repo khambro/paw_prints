@@ -8,6 +8,7 @@ class ReportsController < ApplicationController
       @image= Image.new(image_url: params[:image][:image_url], report_id: @report.id)
       @image.save
     end
+    ReportMailer.new_report(@report.id).deliver_now
     redirect_to "/account"
   end
 

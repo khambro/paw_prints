@@ -1,0 +1,7 @@
+<h1>Report Card for <%= @report.pet.name %> </h1>
+
+  <%= @report.created_at %>
+  <%= @report.activity %>
+  <% @report.images.each do |i| %>
+    <%= image_tag i.image_url.url(:square) %>
+  <% end  %>
