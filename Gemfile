@@ -22,6 +22,11 @@ gem 'fog'
 gem 'dotenv-rails'
 gem 'mini_magick'
 
+gem 'bourbon'
+gem 'neat'
+gem 'bitters'
+gem 'refills'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 
 

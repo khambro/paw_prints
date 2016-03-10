@@ -11,7 +11,7 @@ class PetsController < ApplicationController
     @pet = Pet.new(pet_params)
 
     if @pet.save
-      redirect_to "/account"
+      redirect_to "/account/#{@current_user.id}"
     else
       redirect_to "/new-owner", notice: "Username or email not complete, or passwords do not match. You tell me!"
     end

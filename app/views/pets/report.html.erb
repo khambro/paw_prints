@@ -6,19 +6,15 @@
   <%= form_tag "/report/#{@pet.id}", multipart: true do %>
     <input type="hidden" name="report[sitter_id]" value="<%= current_user.id %>" />
     <input type="hidden" name="report[pet_id]" value="<%= @pet.id %>" />
-    <% if @pet.owner %>
-      <input type="hidden" name="report[owner_id]" value="<%= @pet.owner.id %>" />
-    <% else %>
-      <input type="hidden" name="report[unregistered_id]" value="<%= current_user.id %>" />
-    <% end %>
-    <!-- <%= text_field_tag "report[date]", nil, placeholder: "date", class: "date", :required => true  %> -->
+    <input type="hidden" name="report[owner_id]" value="<%= @pet.owner.id %>" />
     <br>
     <%= text_field_tag "report[activity]", nil, placeholder: "activity", class: "activity", :required => true  %>
+    <br>
+    <%= text_field_tag "report[emotion]", nil, placeholder: "emotion", class: "emotion", :required => true  %>
     <br>
     <%= label_tag "Upload Image" %>
     <%= file_field_tag "image[image_url]", :required => true  %>
     <br>
-
     <%= submit_tag "Send Report" %>
   <%end%>
 

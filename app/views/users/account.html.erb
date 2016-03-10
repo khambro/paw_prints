@@ -18,17 +18,22 @@
         <%= email_field_tag "user[email]", nil, placeholder: "email", class: "email", :required => true %>
         <%= text_field_tag "user[phone]", nil, placeholder: "phone", class: "phone", :required => true %>
         <%= text_field_tag "pet[name]", nil, placeholder: "pet", class: "pet", :required => true %>
+        <!-- <%= text_field_tag "pet[breed]", nil, placeholder: "pet breed", class: "pet breed", :required => true %> -->
         <!-- <%= text_field_tag "pet[name]", nil, placeholder: "pet2", class: "pet2" %> -->
         <%= submit_tag "Add Client"%>
       <% end %>
     </div>
   <h2>My Clients</h2>
   <div class= "clients">
-    <% @clients.each do |p|%>
-      <div class="deets">
-        <h3>Pet: <%= link_to p.pet.name, "/pet/#{p.pet.id}"%> </h3>
-
-      </div>
+    <% if @clients.size >= 1 %>
+      <% @clients.each do |p| %>
+        <div class="deets">
+          <h3>Pet: <%= link_to p.pet.name, "/pet/#{p.pet.id}"%> </h3>
+          <h4>Owner: <%= p.pet.owner.name %> </h4>
+          <h4>Contact: <%= p.pet.owner.email %> </h4>
+          <h4> <%= p.pet.owner.phone %> </h4>
+        </div>
+      <% end %>
     <% end %>
   </div>
 
@@ -60,7 +65,7 @@
       <% if @sitter_records %>
         <% @sitter_records.each do |s| %>
         <div>
-            <%= link_to "#{s.sitter.name}", "sitter-profile/#{s.sitter.id}" %>
+            <%= link_to "#{s.sitter.name}", "/sitter-profile/#{s.sitter_id}" %>
         </div>
         <% end %>
       <% end %>

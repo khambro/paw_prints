@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get "/user-sign-in", to: "users#sign_in"
   post "/new-owner", to: "users#owner_create"
   post "/new-sitter", to: "users#sitter_create"
-  get "/account", to: "users#account", as: :account
+  get "/account/:id", to: "users#account", as: :account
   get "/sitter-profile/:id", to: "users#sitter_profile"
   get "/sitters", to: "users#sitters"
   post "/select-sitter/:id", to: "users#select_sitter"

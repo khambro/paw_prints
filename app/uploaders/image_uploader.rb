@@ -19,4 +19,16 @@ class ImageUploader < CarrierWave::Uploader::Base
       process :resize_to_fill => [256, 256]
     end
 
+    version :big do
+      process :resize_to_fill => [512, 512]
+    end
+
+    def fix_exif_rotation
+      manipulate! do |img|
+        img.tap(&:auto_orient)
+      end
+    end
+
+    process :fix_exif_rotation
+
 end

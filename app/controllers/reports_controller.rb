@@ -9,14 +9,14 @@ class ReportsController < ApplicationController
       @image.save
     end
     ReportMailer.new_report(@report.id).deliver_now
-    redirect_to "/account"
+    redirect_to "/account/#{@current_user.id}"
   end
 
 
   private
 
   def report_params
-    params.require(:report).permit(:owner_id, :sitter_id, :pet_id, :unregistered_id, :activity)
+    params.require(:report).permit(:owner_id, :sitter_id, :pet_id, :activity, :emotion)
   end
 
 

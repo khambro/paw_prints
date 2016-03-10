@@ -7,12 +7,15 @@ class UsersController < ApplicationController
   def new_client
     @user = User.new(user_params)
     if @user.save
-      session[:user_id] = @user.id
       @role = Role.new(role: (params[:role][:role]), user_id: @user.id)
       @role.save
-      redirect_to "/account"
+      @pet =  Pet.new(name: params[:pet][:name], owner_id: @user.id)
+      @pet.save
+      @sitter_record = SitterRecord.new(pet_id: @pet.id, owner_id: @user_id, sitter_id: @current_user.id)
+      @sitter_record.save
+      redirect_to "/account/#{@current_user.id}"
     else
-      redirect_to "/new-owner", notice: "Username or email not complete, or passwords do not match. You tell me!"
+      redirect_to "/new-owner", notice: "New client did not save"
     end
   end
 
@@ -22,7 +25,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       @role = Role.new(role: (params[:role][:role]), user_id: @user.id)
       @role.save
-      redirect_to "/account"
+      redirect_to "/account/#{@user.id}"
     else
       redirect_to "/new-owner", notice: "Username or email not complete, or passwords do not match. You tell me!"
     end
@@ -34,7 +37,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       @role = Role.new(role: (params[:role][:role]), user_id: @user.id)
       @role.save
-      redirect_to "/account"
+      redirect_to "/account/#{@current_user.id}"
     else
       redirect_to "/new-sitter", notice: "Username or email not complete, or passwords do not match. You tell me!"
     end
@@ -50,9 +53,8 @@ class UsersController < ApplicationController
 
   def account
     @pets = Pet.where(owner_id: @current_user.id)
-    @clients = SitterRecord.where(sitter_id: @current_user.id ) 
+    @clients = SitterRecord.where(sitter_id: @current_user.id)
     @sitter_records = SitterRecord.where(owner_id: @current_user.id)
-
   end
 
   def sitter_profile
@@ -71,7 +73,7 @@ class UsersController < ApplicationController
       @sitter_record[:pet_id] = p.id
     end
     @sitter_record.save
-    redirect_to "/account"
+    redirect_to "/account/#{@current_user.id}"
   end
 
 
