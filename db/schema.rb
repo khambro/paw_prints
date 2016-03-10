@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160308002330) do
+ActiveRecord::Schema.define(version: 20160310214849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,13 +37,10 @@ ActiveRecord::Schema.define(version: 20160308002330) do
     t.datetime "birthday"
     t.string   "breed"
     t.string   "color"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.integer  "user_id"
-    t.integer  "sitter_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "owner_id"
     t.string   "type"
-    t.integer  "unregistered_id"
   end
 
   create_table "reports", force: :cascade do |t|
@@ -63,13 +60,13 @@ ActiveRecord::Schema.define(version: 20160308002330) do
     t.integer  "user_id"
   end
 
-  create_table "unregistereds", force: :cascade do |t|
-    t.integer  "sitter_id"
-    t.string   "name"
-    t.string   "email"
-    t.string   "phone"
+  create_table "sitter_records", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "pet_id"
+    t.integer  "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "sitter_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -79,7 +76,6 @@ ActiveRecord::Schema.define(version: 20160308002330) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
-    t.string   "role"
     t.string   "current_city"
     t.string   "phone"
   end

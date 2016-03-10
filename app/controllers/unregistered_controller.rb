@@ -22,6 +22,6 @@ class UnregisteredController < ApplicationController
   private
 
   def unregistered_params
-    params.require(:unregistered).permit(:email, :phone, :name, )
+    params.require(:unregistered).permit(:email, :phone, :name)
   end
 end

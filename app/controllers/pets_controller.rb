@@ -9,7 +9,7 @@ class PetsController < ApplicationController
 
   def create
     @pet = Pet.new(pet_params)
-    
+
     if @pet.save
       redirect_to "/account"
     else
@@ -21,6 +21,10 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find_by(id: params[:id])
+    @sitter_ids = []
+    @pet.sitter_records.each do |r|
+      @sitter_ids << r.sitter_id
+    end
   end
 
   def profile

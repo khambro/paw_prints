@@ -4,8 +4,16 @@ class UsersController < ApplicationController
 
   end
 
-  def new_owner
-
+  def new_client
+    @user = User.new(user_params)
+    if @user.save
+      session[:user_id] = @user.id
+      @role = Role.new(role: (params[:role][:role]), user_id: @user.id)
+      @role.save
+      redirect_to "/account"
+    else
+      redirect_to "/new-owner", notice: "Username or email not complete, or passwords do not match. You tell me!"
+    end
   end
 
   def owner_create
@@ -42,8 +50,30 @@ class UsersController < ApplicationController
 
   def account
     @pets = Pet.where(owner_id: @current_user.id)
-    @clients = Pet.where(sitter_id: @current_user.id)
+    @clients = SitterRecord.where(sitter_id: @current_user.id ) 
+    @sitter_records = SitterRecord.where(owner_id: @current_user.id)
+
   end
+
+  def sitter_profile
+    @sitter = User.find(params[:id])
+  end
+
+  def sitters
+    @sitters = Role.where(role: "sitter")
+  end
+
+  def select_sitter
+    @pets = Pet.where(owner_id: @current_user.id)
+    @sitter = User.find(params[:id])
+    @sitter_record = SitterRecord.new(sitter_id: @sitter.id, owner_id: @current_user.id)
+    @pets.each do |p|
+      @sitter_record[:pet_id] = p.id
+    end
+    @sitter_record.save
+    redirect_to "/account"
+  end
+
 
 
 

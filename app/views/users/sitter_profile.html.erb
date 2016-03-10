@@ -1,0 +1,7 @@
+<h2><%= @sitter.name %></h2>
+<h3><%= @sitter.email %></h3>
+<!-- <h3><%= @sitter.phone %></h3>  -->
+
+
+<h2><%= form_tag "/select-sitter/#{@sitter.id}" %> </h2>
+<%= submit_tag "Select #{@sitter.name} as your sitter" %>

@@ -9,9 +9,12 @@ Rails.application.routes.draw do
   post "/new-owner", to: "users#owner_create"
   post "/new-sitter", to: "users#sitter_create"
   get "/account", to: "users#account", as: :account
+  get "/sitter-profile/:id", to: "users#sitter_profile"
+  get "/sitters", to: "users#sitters"
+  post "/select-sitter/:id", to: "users#select_sitter"
 
-  get "/new-client", to: "unregistered#new"
-  post "/new-client", to: "unregistered#unregistered_client_create"
+  get "/new-client", to: "users#new_client"
+  post "/new-client", to: "users#new_client"
 
 
   post "/sign-in", to: "sessions#sign_in", as: :sign_in

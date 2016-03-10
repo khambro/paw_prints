@@ -1,0 +1,7 @@
+
+<h2>Available sitters</h2>
+<% @sitters.each do |s| %>
+<div>
+  <%= link_to "#{s.user.name}", "sitter-profile/#{s.user.id}" %>
+</div>
+<% end %>

@@ -1,8 +1,11 @@
 <h1>Dashboard for <%= @pet.name %> </h1>
 
-<% if @current_user.id == @pet.sitter_id %>
-  <h4><%= link_to "Create Report", report_path %></h4>
+<% if @pet.sitter_records.count > 0 %>
+  <% if @sitter_ids.include?(@current_user.id) %>
+    <h4><%= link_to "Create Report", report_path %></h4>
+    <% end %>
 <% end %>
+
 
 <h2>Reports</h2>
 <% @pet.reports.each do |r| %>

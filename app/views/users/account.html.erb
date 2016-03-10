@@ -9,15 +9,14 @@
 <% end %>
 
 <% if current_user.user_roles.include?("sitter")%>
-
   <div class="new-client">
     <h4 class="client">Add new client</h4>
     <div class="showit" style="display: none">
       <%= form_tag "/new-client" do %>
-        <input type="hidden" name="role[role]" value="owner"/>
-        <%= text_field_tag "unregistered[name]", nil, placeholder: "name", class: "name", :required => true %>
-        <%= email_field_tag "unregistered[email]", nil, placeholder: "email", class: "email", :required => true %>
-        <%= text_field_tag "unregistered[phone]", nil, placeholder: "phone", class: "phone", :required => true %>
+        <input type="hidden" name="role[role]" value="unregistered"/>
+        <%= text_field_tag "user[name]", nil, placeholder: "name", class: "name", :required => true %>
+        <%= email_field_tag "user[email]", nil, placeholder: "email", class: "email", :required => true %>
+        <%= text_field_tag "user[phone]", nil, placeholder: "phone", class: "phone", :required => true %>
         <%= text_field_tag "pet[name]", nil, placeholder: "pet", class: "pet", :required => true %>
         <!-- <%= text_field_tag "pet[name]", nil, placeholder: "pet2", class: "pet2" %> -->
         <%= submit_tag "Add Client"%>
@@ -27,12 +26,8 @@
   <div class= "clients">
     <% @clients.each do |p|%>
       <div class="deets">
-        <h3>Pet: <%= link_to p.name, "/pet/#{p.id}"%> </h3>
-        <% if p.unregistered %>
-          <h4>Owner: <%= p.unregistered.name %> </h4>
-          <h4>Contact info: <%= p.unregistered.phone %>
-          <%= p.unregistered.email %></h4>
-        <% end %>
+        <h3>Pet: <%= link_to p.pet.name, "/pet/#{p.pet.id}"%> </h3>
+
       </div>
     <% end %>
   </div>
@@ -53,8 +48,21 @@
       <%= submit_tag %>
     <%end%>
   </h3>
-  <h2>My Pets</h2>
-  <% @pets.each do |p|%>
-    <h3>Pet: <%= link_to p.name, "/pet/#{p.id}"%> </h3>
-  <% end %>
+  <div class="my-pets">
+    <h2>My Pets</h2>
+    <% @pets.each do |p|%>
+      <h3>Pet: <%= link_to p.name, "/pet/#{p.id}"%> </h3>
+    <% end %>
+  </div>
+  <div class="my-sitters">
+    <h2>My Sitters</h2>
+    <%= link_to "Find New Sitter", "/sitters" %>
+      <% if @sitter_records %>
+        <% @sitter_records.each do |s| %>
+        <div>
+            <%= link_to "#{s.sitter.name}", "sitter-profile/#{s.sitter.id}" %>
+        </div>
+        <% end %>
+      <% end %>
+  </div>
 <% end %>
