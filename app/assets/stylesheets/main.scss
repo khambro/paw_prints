@@ -17,7 +17,20 @@ h1 {
   background-color: #b0096d;
   height: 200px;
   width: 400px;
+}
 
+.owner a {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  padding: 5em;
+  margin: -5em;
+}
+
+
+.owner:hover {
+  background-color: #e641a4;
+  cursor: pointer;
 }
 
 .owner h2 {
@@ -37,12 +50,46 @@ h1 {
   width: 400px;
 }
 
-.sitter h2 {
-  padding-top: 60px;
-  text-align: center;
+.sitter:hover {
+  background-color: #6bf260;
 
 }
 
 .sitter a {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  padding: 5em;
+  margin: -5em;
+}
+.sitter h2 {
+  padding-top: 60px;
+  text-align: center;
+}
+
+.sitter a {
   color: black;
+}
+
+.notblue {
+  a {color:
+     white;
+   }
+  color: white;
+}
+
+.add-pet {
+  color: blue;
+}
+
+.add-pet:hover {
+  background-color: black;
+}
+
+// report cards
+
+.reportcard {
+  border: 2px solid black;
+  display: inline-block;
+  margin: 0 0 0 50px;
 }

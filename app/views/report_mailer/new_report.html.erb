@@ -1,13 +1,22 @@
+<div class= "reportcard">
+  <h1>Greetings, <%= @report.pet.owner.name %>! </h1>
 
-<h1>Greetings, <%= @report.pet.owner.name %>! </h1>
+  <h2>Here is <%= @report.pet.name %>'s report card for <%= @report.created_at.strftime("%A, %b %d") %>. </h1>
 
-<h2>Here is <%= @report.pet.name %>'s report card for <%= @report.created_at.strftime("%A, %b %d") %>. </h1>
+  <div class= "activity">
+    <p> <%= @report.pet.name %> spent a large part of the day <%= @report.activity %>. The day was filled with lots of excitement and <%= @report.pet.name %> was <%= @report.emotion %> most of the day.</p>
+  </div>
 
-<p> <%= @report.pet.name %> spent a large part of the day <%= @report.activity %>. The day was filled with lots of excitement and <%= @report.pet.name %> was <%= @report.emotion %> most of the day</p>
+  <div class= "images">
+    <% @report.images.each do |i| %>
+      <%= image_tag i.image_url.url(:image) %>
+    <% end  %>
+  </div>
 
-  <% @report.images.each do |i| %>
-    <%= image_tag i.image_url.url(:vertical) %>
-  <% end  %>
+  <div class= "bye">
+    <h3>Have a great day!</h3>
+    <h3><%= @report.sitter.name %></h3>
+  </div>
 
-<h3>Have a great day!</h3>
-<h3><%= @report.sitter.name %></h3>
+
+</div>

@@ -8,12 +8,18 @@
     <input type="hidden" name="report[pet_id]" value="<%= @pet.id %>" />
     <input type="hidden" name="report[owner_id]" value="<%= @pet.owner.id %>" />
     <br>
-    <%= text_field_tag "report[activity]", nil, placeholder: "activity", class: "activity", :required => true  %>
+    <%= text_field_tag "report[activity]", nil, placeholder: "activities", class: "activities", :required => true  %>
     <br>
-    <%= text_field_tag "report[emotion]", nil, placeholder: "emotion", class: "emotion", :required => true  %>
+    <%= text_field_tag "report[emotion]", nil, placeholder: "mood", class: "mood", :required => true  %>
     <br>
     <%= label_tag "Upload Image" %>
     <%= file_field_tag "image[image_url]", :required => true  %>
+    <br>
+    <%= label_tag "Upload Image(optional)" %>
+    <%= file_field_tag "image[image_url]" %>
+    <br>
+    <%= label_tag "Upload Image(optional)" %>
+    <%= file_field_tag "image[image_url]" %>
     <br>
     <%= submit_tag "Send Report" %>
   <%end%>

@@ -15,13 +15,18 @@ class ImageUploader < CarrierWave::Uploader::Base
     #   process :resize_to_fill => [256, 256]
     # end
 
-    version :vertical do
-      process :resize_to_fill => [250, 400]
+    # version :square do
+    #   process :resize_to_fill => [256, 256]
+    # end
+
+
+    version :image do
+      process :resize_to_fit => [400, 600]
     end
 
-    version :horizontal do
-      process :resize_to_fill => [400, 250]
-    end
+    # version :horizontal do
+    #   process :resize_to_fill => [400, 250]
+    # end
 
     # version :big do
     #   process :resize_to_fill => [512, 512]

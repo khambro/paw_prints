@@ -7,11 +7,22 @@
 <% end %>
 
 
-<h2>Reports</h2>
-<% @pet.reports.each do |r| %>
-  <%= r.created_at %>
-  <%= r.activity %>
-  <% r.images.each do |i| %>
-    <%= image_tag i.image_url.url(:horizontal) %>
+  <h2>Reports</h2>
+  <% @pet.reports.each do |r| %>
+  <div class= "reportcard">
+    <div class= "time">
+      <%= r.created_at.strftime("%A %b %e %Y") %>
+    </div>
+    <div class= "activity">
+      Activity:<%= r.activity %>
+    </div>
+    <div class= "emotion">
+      Mood:<%= r.emotion %>
+    </div>
+    <div class= "images">
+      <% r.images.each do |i| %>
+        <%= image_tag i.image_url.url(:image) %>
+      <% end  %>
+    </div>
+  </div>
   <% end  %>
-<% end  %>

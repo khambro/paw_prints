@@ -14,11 +14,11 @@
       <!-- <%= link_to image_tag("logo.jpg"), root_path %> -->
       <ul class="nav">
         <% if !@current_user %>
-          <li><button><%= link_to "Sign Up", new_owner_path %></button></li>
-          <li><button><%= link_to "Sign In", "/user-sign-in" %></button></li>
+          <li><button class= "notblue"><%= link_to "Sign Up", new_owner_path %></button></li>
+          <li><button class= "notblue"><%= link_to "Sign In", "/user-sign-in" %></button></li>
         <% else %>
-          <li><button><%= link_to "Sign Out", sign_out_path %></button></li>
-          <li><button><%= link_to "My Account", "/account/#{@current_user.id}" %></button></li>
+          <li><button class= "notblue"><%= link_to "Sign Out", sign_out_path %></button></li>
+          <li><button class= "notblue"><%= link_to "My Account", "/account/#{@current_user.id}" %></button></li>
         <% end %>
       </ul>
     </div>
