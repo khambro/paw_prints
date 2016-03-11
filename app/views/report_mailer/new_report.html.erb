@@ -1,12 +1,13 @@
+
 <h1>Greetings, <%= @report.pet.owner.name %>! </h1>
 
-<h2>Here is <%= @report.pet.name %>'s report card for <%= @report.created_at %> </h1>
+<h2>Here is <%= @report.pet.name %>'s report card for <%= @report.created_at.strftime("%A, %b %d") %>. </h1>
 
 <p> <%= @report.pet.name %> spent a large part of the day <%= @report.activity %>. The day was filled with lots of excitement and <%= @report.pet.name %> was <%= @report.emotion %> most of the day</p>
 
   <% @report.images.each do |i| %>
-    <%= image_tag i.image_url.url(:square) %>
+    <%= image_tag i.image_url.url(:vertical) %>
   <% end  %>
 
-<h4>Have a great day!</h4>
-<h4><%= @report.sitter.name %></h4>
+<h3>Have a great day!</h3>
+<h3><%= @report.sitter.name %></h3>

@@ -12,6 +12,6 @@
   <%= r.created_at %>
   <%= r.activity %>
   <% r.images.each do |i| %>
-    <%= image_tag i.image_url.url(:square) %>
+    <%= image_tag i.image_url.url(:horizontal) %>
   <% end  %>
 <% end  %>

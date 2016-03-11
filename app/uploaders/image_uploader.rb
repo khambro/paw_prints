@@ -7,21 +7,25 @@ class ImageUploader < CarrierWave::Uploader::Base
       "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
     end
 
-    version :thumb do
-      process :resize_to_fit => [32, 32]
+    # version :thumb do
+    #   process :resize_to_fit => [32, 32]
+    # end
+
+    # version :square do
+    #   process :resize_to_fill => [256, 256]
+    # end
+
+    version :vertical do
+      process :resize_to_fill => [250, 400]
     end
 
-    version :preview do
-      process :resize_to_fit => [256, 256]
+    version :horizontal do
+      process :resize_to_fill => [400, 250]
     end
 
-    version :square do
-      process :resize_to_fill => [256, 256]
-    end
-
-    version :big do
-      process :resize_to_fill => [512, 512]
-    end
+    # version :big do
+    #   process :resize_to_fill => [512, 512]
+    # end
 
     def fix_exif_rotation
       manipulate! do |img|
