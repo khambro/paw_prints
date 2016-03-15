@@ -27,6 +27,8 @@ gem 'neat'
 gem 'bitters'
 gem 'refills'
 
+gem 'twilio-ruby', '~> 4.11.1'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 
 

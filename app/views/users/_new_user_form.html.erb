@@ -1,6 +1,8 @@
 
   <%= email_field_tag "user[email]", nil, placeholder: "email", class: "email", :required => true  %>
   <br>
+  <%= text_field_tag "user[phone]", nil, placeholder: "phone(optional to receive SMS)", class: "phone" %>
+  <br>
   <%= text_field_tag "user[name]", nil, placeholder: "name", class: "name", :required => true  %>
   <br>
   <%= text_field_tag "user[username]", nil, placeholder: "username", class: "username", :required => true  %>
