@@ -9,8 +9,8 @@
 <% end %>
 
 <% if current_user.user_roles.include?("sitter")%>
-  <div class="new-client">
-    <h4 class="client">Add new client</h4>
+  <h4 class="client">Add new client</h4>
+  <div class ="sitterpage">
     <div class="showit" style="display: none">
       <%= form_tag "/new-client" do %>
         <input type="hidden" name="role[role]" value="unregistered"/>
@@ -29,15 +29,25 @@
       <% @clients.each do |p| %>
         <div class="deets">
           <% if p.pet %>
-            <h3>Pet: <%= link_to p.pet.name, "/pet/#{p.pet.id}"%> </h3>
-            <h4>Owner: <%= p.pet.owner.name %> </h4>
-            <h4>Contact: <%= p.pet.owner.email %> </h4>
-            <h4> <%= p.pet.owner.phone %> </h4>
-          <% end %>  
+            <h3>Pet: <%= link_to p.pet.name, "/pet/#{p.pet.id}", class: "pet" %>  </h3>
+            <!-- <h3>Pet: <%= link_to p.pet.name, "/pet/#{p.pet.id}", id: "pet" %>  </h3> -->
+            <h4 class="owner-name">Owner: <%= p.pet.owner.name %> </h4>
+
+          <% end %>
         </div>
       <% end %>
     <% end %>
   </div>
+</div>
+<div class= "dashboard">
+  <div class = "petdeets">
+    <h3>Pet Dashboard for <span class="pet-name"></span> </h3>
+    <h4>Owner:<span class="owner-name"></span></h4>
+    <h4>Email:<span class="owner-email"></span></h4>
+    <h4>Phone:<span class="owner-phone"></span></h4>
+  </div>
+
+</div>
 
 <% end %>
 

@@ -5,23 +5,28 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
 </head>
 <body>
 
+
   <div class="page-wrap">
-  <div class="wrap">
-    <div id="header">
-      <%= link_to image_tag("paws2.png"), root_path %>
+    <div class="header">
+      <%= link_to image_tag("paws2.png"), root_path, class: "icon" %>
       <ul class="nav">
         <% if !@current_user %>
-          <!-- <li><button class= "notblue"><%= link_to "Sign Up", new_owner_path %></button></li> -->
           <li><button class= "notblue"><%= link_to "Sign In", "/user-sign-in" %></button></li>
         <% else %>
           <li><button class= "notblue"><%= link_to "Sign Out", sign_out_path %></button></li>
           <li><button class= "notblue"><%= link_to "My Account", "/account/#{@current_user.id}" %></button></li>
         <% end %>
       </ul>
-    </div>
   </div>
 
   <% if flash.key?(:notice) %>

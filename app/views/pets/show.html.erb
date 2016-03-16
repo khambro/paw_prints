@@ -21,6 +21,7 @@
     </div>
     <div class= "images">
       <% r.images.each do |i| %>
+      <div class="fb-share-button" data-href="<% i.image_url.url %>" data-layout="link"></div>
         <%= image_tag i.image_url.url(:image) %>
       <% end  %>
     </div>

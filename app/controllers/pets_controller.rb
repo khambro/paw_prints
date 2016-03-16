@@ -25,6 +25,10 @@ class PetsController < ApplicationController
     @pet.sitter_records.each do |r|
       @sitter_ids << r.sitter_id
     end
+    render :json=> {
+      pet: @pet,
+      owner: @pet.owner
+      }
   end
 
   def profile

@@ -1,22 +1,68 @@
 body {
   background-color: #78e4c4;
+  font-family: 'Sarala', sans-serif;
 }
 
+.header {
+    @include span-columns(12);
+}
+
+.header {
+  .nav {
+    float: right;
+    // @include shift(9);
+    display: inline-block;
+    margin-top: 0;
+  }
+  img {
+    display: inline-block;
+  }
+  li {
+    margin-top: 0;
+    display: inline-block;
+  }
+}
+
+.notblue {
+  a {color:
+     white;
+   }
+  ul {
+    margin: 0;
+  }
+  background-color: black;
+  display: inline-block;
+  float: right;
+
+}
+
+.icon  {
+  display: inline-block;
+  float: left;
+}
 
 h1 {
   text-align: center;
 }
 
+.title {
+  font-family: 'Sarala', sans-serif;
+  font-size: 46px;
+  font-weight: 700;
+}
+
 .user-type {
-  margin-left: 350px;
-  padding-top: 150px;
+  @include span-columns(10);
+  @include shift(2);
+  padding-top: 50px;
 }
 
 .owner {
+  @include span-columns(5);
   display: inline-block;
   background-color: #b0096d;
-  height: 200px;
-  width: 400px;
+  font-size: 24px;
+  height: 150px;
 }
 
 .owner a {
@@ -34,7 +80,7 @@ h1 {
 }
 
 .owner h2 {
-  padding-top: 60px;
+  padding-top: 45px;
   text-align: center;
 
 }
@@ -44,10 +90,11 @@ h1 {
 }
 
 .sitter {
+  @include span-columns(5);
   display: inline-block;
   background-color: #2ae21a;
-  height: 200px;
-  width: 400px;
+  font-size: 24px;
+  height: 150px;
 }
 
 .sitter:hover {
@@ -63,7 +110,7 @@ h1 {
   margin: -5em;
 }
 .sitter h2 {
-  padding-top: 60px;
+  padding-top: 45px;
   text-align: center;
 }
 
@@ -71,13 +118,8 @@ h1 {
   color: black;
 }
 
-.notblue {
-  a {color:
-     white;
-   }
-  color: white;
-  background-color: black;
-}
+
+
 
 .add-pet {
   color: blue;
@@ -93,4 +135,19 @@ h1 {
   border: 2px solid black;
   display: inline-block;
   margin: 0 0 0 50px;
+}
+
+.sitterpage {
+  border: 2px solid black;
+  width: 300px;
+  display: inline-block;
+  float: left;
+}
+
+.dashboard {
+  border: 2px solid black;
+  width: 900px;
+  display: inline-block;
+  height: 1000px;
+
 }
