@@ -63,20 +63,23 @@ h1 {
   background-color: #b0096d;
   font-size: 24px;
   height: 150px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .owner a {
   display: inline-block;
   position: relative;
   z-index: 1;
-  padding: 5em;
-  margin: -5em;
+  padding: 1em;
+  margin: -3em;
 }
 
 
 .owner:hover {
   background-color: #e641a4;
   cursor: pointer;
+  box-shadow: none;
 }
 
 .owner h2 {
@@ -93,12 +96,17 @@ h1 {
   @include span-columns(5);
   display: inline-block;
   background-color: #2ae21a;
+  border-width: 3px;
+  border-color: rgba(35, 179, 21, 0.7);
   font-size: 24px;
   height: 150px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .sitter:hover {
   background-color: #6bf260;
+  cursor: pointer;
 
 }
 
@@ -106,8 +114,8 @@ h1 {
   display: inline-block;
   position: relative;
   z-index: 1;
-  padding: 5em;
-  margin: -5em;
+  padding: 1em;
+  margin: -3em;
 }
 .sitter h2 {
   padding-top: 45px;
