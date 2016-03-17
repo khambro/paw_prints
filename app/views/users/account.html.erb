@@ -5,12 +5,13 @@
 <% end %>
 
 <% if !current_user.user_roles.include?("owner")%>
-  <h5>I am also a pet owner</h5>
+  <a>I am also a pet owner</a>
 <% end %>
 
 <% if current_user.user_roles.include?("sitter")%>
-  <h4 class="client">Add new client</h4>
+
   <div class ="sitterpage">
+    <a class="client">Add new client</a>
     <div class="showit" style="display: none">
       <%= form_tag "/new-client" do %>
         <input type="hidden" name="role[role]" value="unregistered"/>
@@ -29,10 +30,8 @@
       <% @clients.each do |p| %>
         <div class="deets">
           <% if p.pet %>
-            <h3>Pet: <%= link_to p.pet.name, "/pet/#{p.pet.id}", class: "pet" %>  </h3>
-            <!-- <h3>Pet: <%= link_to p.pet.name, "/pet/#{p.pet.id}", id: "pet" %>  </h3> -->
-            <h4 class="owner-name">Owner: <%= p.pet.owner.name %> </h4>
-
+            <h3 class="pet">Pet: <%= link_to p.pet.name, "/pet/#{p.pet.id}", class: "pet" %>  </h3>
+            <a class="little-button"><%= link_to "Create Report", "/report/#{p.pet.id}" %> </a>
           <% end %>
         </div>
       <% end %>
@@ -46,6 +45,11 @@
     <h4>Email:<span class="owner-email"></span></h4>
     <h4>Phone:<span class="owner-phone"></span></h4>
   </div>
+  <h2>Reports</h2>
+  <div class= "reportcard">
+
+  </div>
+
 
 </div>
 

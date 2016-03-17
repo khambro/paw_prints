@@ -22,12 +22,19 @@ class PetsController < ApplicationController
   def show
     @pet = Pet.find_by(id: params[:id])
     @sitter_ids = []
+    @images = []
+    @pet.reports.each do |i|
+      i.images.each do |p|
+        @images << p.image_url
+      end
+    end
     @pet.sitter_records.each do |r|
       @sitter_ids << r.sitter_id
     end
     render :json=> {
       pet: @pet,
-      owner: @pet.owner
+      owner: @pet.owner,
+      reports: @pet.reports.as_json(include: {images: {methods: :square_image} } )
       }
   end
 

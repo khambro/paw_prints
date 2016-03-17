@@ -135,6 +135,7 @@ h1 {
   border: 2px solid black;
   display: inline-block;
   margin: 0 0 0 50px;
+
 }
 
 .sitterpage {
@@ -148,6 +149,18 @@ h1 {
   border: 2px solid black;
   width: 900px;
   display: inline-block;
-  height: 1000px;
+  overflow: scroll;
+  height: calc(100vh - 165px);
+}
 
+.pet{
+  display: inline-block;
+}
+
+.little-button {
+  background-color: #78e4c4;
+  width: 10px;
+  font-size: 10px;
+  color: white;
+  display: inline-block;
 }
