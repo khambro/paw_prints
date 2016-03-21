@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   post "/new-sitter", to: "users#sitter_create"
   get "/account/:id", to: "users#account", as: :account
   get "/sitter-profile/:id", to: "users#sitter_profile"
+  get "/sitter-profile/:id/edit", to:"users#edit_sitter"
+  post "/edit-sitter/:id", to:"users#update_sitter_profile"
   get "/sitters", to: "users#sitters"
   post "/select-sitter/:id", to: "users#select_sitter"
 

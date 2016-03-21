@@ -1,0 +1,5 @@
+<%= form_tag "/edit-sitter/#{@sitter.id}" do %>
+  <%= text_field_tag "user[bio]", nil, placeholder: "bio", class: "bio", :required => true  %>
+<br>
+<%= submit_tag "Update Profile" %>
+<%end%>

@@ -16,10 +16,10 @@ $(document).ready(function() {
     $.get(url, function(data) {
       console.log(data);
       $(".pet-name").html(data["pet"]["name"]);
-      $(".owner-name").html(data["owner"]["name"]);
-      $(".owner-phone").html(data["owner"]["phone"]);
-      $(".owner-email").html(data["owner"]["email"]);
-      $(".petdeets").append($(".create-report").attr("href", "/report/" + data["pet"]["id"]))
+      $(".owner-name").html("Owner: " + data["owner"]["name"]);
+      $(".owner-phone").html("Phone: " + data["owner"]["phone"]);
+      $(".owner-email").html("Email: " + data["owner"]["email"]);
+      $(".petdeets").prepend($(".create-report").attr("href", "/report/" + data["pet"]["id"]));
       console.log($(".create-report"));
       var report = [];
       for (i=0; i<data["reports"].length; i++ ) {
@@ -27,8 +27,9 @@ $(document).ready(function() {
         report[i].push(data["reports"][i]["activity"]);
         report[i].push(data["reports"][i]["created_at"]);
         report[i].push(data["reports"][i]["emotion"]);
-        report[i].push(data["reports"][i]["images"][0]["square_url"])
-        report[i].push(data["reports"][i]["images"][0]["image_url"]["url"])
+        report[i].push(data["reports"][i]["images"][0]["image_url"]["url"]);
+        // report[i].push(data["reports"][i]["images"][0]["square_url"]["url"])
+
       }
 
 
@@ -56,11 +57,5 @@ $(document).ready(function() {
 
 
 
-
-
-
-
-var h1 = $("<h1>")
-h1.text = ("Hello")
 
 });

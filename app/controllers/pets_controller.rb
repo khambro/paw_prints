@@ -36,6 +36,7 @@ class PetsController < ApplicationController
       owner: @pet.owner,
       reports: @pet.reports.as_json(include: {images: {methods: :square_image} } )
       }
+
   end
 
   def profile

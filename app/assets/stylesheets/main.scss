@@ -1,5 +1,5 @@
 body {
-  background-color: #78e4c4;
+  // background-color: #78e4c4;
   font-family: 'Sarala', sans-serif;
 }
 
@@ -126,39 +126,47 @@ h1 {
   color: black;
 }
 
-
-
-
-.add-pet {
-  color: blue;
-}
-
-.add-pet:hover {
-  background-color: black;
-}
-
 // report cards
+
+.user-dash {
+  font-size: 36px;
+}
+
 
 .reportcard {
   border: 2px solid black;
   display: inline-block;
-  margin: 0 0 0 50px;
+  overflow: scroll;
+  height: calc(100vh - 165px);
+}
 
+.create-report {
+  display: inline-block;
+  float: right;
+  margin-right: 20px;
+  font-size: 24px;
 }
 
 .sitterpage {
+  @include span-columns(12);
   border: 2px solid black;
-  width: 300px;
   display: inline-block;
   float: left;
 }
 
-.dashboard {
-  border: 2px solid black;
-  width: 900px;
+.clients {
+  @include span-columns(3);
   display: inline-block;
-  overflow: scroll;
-  height: calc(100vh - 165px);
+}
+
+
+.dashboard {
+  // padding-left: 10px;
+  @include span-columns(9);
+  // @include shift(3)
+  display: inline-block;
+  // overflow: scroll;
+  // height: calc(100vh - 165px);
 }
 
 .pet{
@@ -170,5 +178,19 @@ h1 {
   width: 10px;
   font-size: 10px;
   color: white;
+  display: inline-block;
+}
+
+.owner-page {
+  @include span-columns(12);
+  display: inline-block;
+}
+
+.add-pet {
+  @include span-columns(12);
+
+}
+.my-pets {
+  @include span-columns(3);
   display: inline-block;
 }

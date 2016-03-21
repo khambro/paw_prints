@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  attr_accessor :bio
 
   def index
 
@@ -61,6 +62,21 @@ class UsersController < ApplicationController
     @sitter = User.find(params[:id])
   end
 
+  def update_sitter_profile
+    @update = User.find(params[:id])
+    @update.bio = params[:user][:bio]
+    @update.save
+    if @update.save
+      redirect_to "/account/#{@current_user.id}"
+    else
+      redirect_to "/sitter-profile/#{@current_user.id}/edit", notice: "Update not saved."
+    end
+  end
+
+  def edit_sitter
+    @sitter = User.find(params[:id])
+  end
+
   def sitters
     @sitters = Role.where(role: "sitter")
   end
@@ -83,7 +99,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :phone, :username, :name, :role, :current_city, :password_confirmation)
+    params.require(:user).permit(:email, :password, :bio, :phone, :username, :name, :role, :current_city, :password_confirmation)
   end
 
 end
