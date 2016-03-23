@@ -15,11 +15,13 @@ $(document).ready(function() {
     // console.log(url);
     $.get(url, function(data) {
       console.log(data);
-      $(".pet-name").html(data["pet"]["name"]);
+      $(".pet-name").html("Dashboard for " + data["pet"]["name"]);
       $(".owner-name").html("Owner: " + data["owner"]["name"]);
       $(".owner-phone").html("Phone: " + data["owner"]["phone"]);
       $(".owner-email").html("Email: " + data["owner"]["email"]);
       $(".petdeets").prepend($(".create-report").attr("href", "/report/" + data["pet"]["id"]));
+      $(".create-report").html("Create Report")
+
       console.log($(".create-report"));
       var report = [];
       for (i=0; i<data["reports"].length; i++ ) {

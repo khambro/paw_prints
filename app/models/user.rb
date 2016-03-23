@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   has_many :sitter_records
   validates :password, confirmation: true, presence: true, if: :registered
-  validates :username, presence: true, uniqueness: true
+  validates :username, presence: true, uniqueness: true, if: :registered
+
 
 
   def user_roles

@@ -5,8 +5,8 @@
 <% end %>
 
 <% if !current_user.user_roles.include?("owner")%>
-  <a>I am also a pet owner</a>
-  <%= link_to "Edit Profile", "/sitter-profile/#{@current_user.id}/edit" %>
+  <!-- <a>I am also a pet owner</a> -->
+  <!-- <%= link_to "Edit Profile", "/sitter-profile/#{@current_user.id}/edit" %> -->
 <% end %>
 
 <% if current_user.user_roles.include?("sitter")%>
@@ -19,10 +19,10 @@
     <div class="showit" style="display: none">
       <%= form_tag "/new-client" do %>
         <input type="hidden" name="role[role]" value="unregistered"/>
-        <%= text_field_tag "user[name]", nil, placeholder: "name", class: "name", :required => true %>
-        <%= email_field_tag "user[email]", nil, placeholder: "email", class: "email", :required => true %>
-        <%= text_field_tag "user[phone]", nil, placeholder: "phone", class: "phone", :required => true %>
-        <%= text_field_tag "pet[name]", nil, placeholder: "pet", class: "pet", :required => true %>
+        <%= text_field_tag "user[name]", nil, placeholder: "owner name", class: "name", :required => true %>
+        <%= email_field_tag "user[email]", nil, placeholder: "owner email", class: "email", :required => true %>
+        <%= text_field_tag "user[phone]", nil, placeholder: "owner phone", class: "phone", :required => true %>
+        <%= text_field_tag "pet[name]", nil, placeholder: "pet name", class: "pet", :required => true %>
         <!-- <%= text_field_tag "pet[breed]", nil, placeholder: "pet breed", class: "pet breed", :required => true %> -->
         <!-- <%= text_field_tag "pet[name]", nil, placeholder: "pet2", class: "pet2" %> -->
         <%= submit_tag "Add Client"%>
@@ -33,7 +33,7 @@
         <div class="deets">
           <% if p.pet %>
             <h3 class="pet">Pet: <%= link_to p.pet.name, "/pet/#{p.pet.id}", class: "pet" %>  </h3>
-            <a class="little-button"><%= link_to "Create Report", "/report/#{p.pet.id}" %> </a>
+            <a class="little-button"><%= link_to "Create Report", "/report/#{p.pet.id}", class:"little" %> </a>
           <% end %>
         </div>
       <% end %>
@@ -42,8 +42,8 @@
 
   <div class= "dashboard">
     <div class = "petdeets">
-      <h3>Pet Dashboard for <span class="pet-name"></span> </h3>
-      <a class="create-report" href="">Create Report</a>
+      <h3><span class="pet-name"></span> </h3>
+      <a class="create-report" href=""></a>
       <h4><span class="owner-name"></span></h4>
       <h4><span class="owner-email"></span></h4>
       <h4><span class="owner-phone"></span></h4>
@@ -96,22 +96,26 @@
     <div class= "dashboard">
       <div class = "petdeets">
         <% @pets.each do |p|%>
-          <h3>Pet: <%= link_to p.name, "/pet/#{p.id}"%> </h3>
-          <h3>Pet Dashboard for <%= p.name %> </h3>
+          <h3>Dashboard for <%= p.name %> </h3>
         </div>
         <h2>Reports</h2>
         <div class= "reportcard">
           <% @pets.each do |p|%>
             <% p.reports.each do|r| %>
-            <h2>Report for <%= r.created_at.strftime("%A, %b %d") %> </h2>
-            <div class= "activity">
-              <p> <%= r.pet.name %> spent a large part of the day <%= r.activity %>. The day was filled with lots of excitement and <%= r.pet.name %> was <%= r.emotion %> most of the day.</p>
-            </div>
-            <div class= "images">
-              <% r.images.each do |i| %>
-                <%= image_tag i.image_url.url(:square) %>
-              <% end  %>
-            </div>
+            <div class= "individual">
+
+
+              <h2>Report for <%= r.created_at.strftime("%A, %b %d") %> </h2>
+              <p>Sitter: <%= link_to "#{r.sitter.name}", "/sitter-profile/#{r.sitter.id}"  %> </p>
+              <div class= "activity">
+                <p> <%= r.pet.name %> spent a large part of the day <%= r.activity %>. The day was filled with lots of excitement and <%= r.pet.name %> was <%= r.emotion %> most of the day.</p>
+              </div>
+              <div class= "images">
+                <% r.images.each do |i| %>
+                  <%= image_tag i.image_url.url(:square) %>
+                <% end  %>
+              </div>
+              </div>  
             <% end %>
           <% end %>
         <% end %>

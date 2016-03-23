@@ -133,11 +133,26 @@ h1 {
 }
 
 
+.deets {
+  margin: 2px;
+  border-bottom: .5px solid rgba(230, 226, 236, 0.3);
+}
+
+.individual {
+  border: 1px solid #dbc7c4;
+}
+
+
 .reportcard {
-  border: 2px solid black;
+  @include span-columns(10);
+  border: 1px solid #dbc7c4;
   display: inline-block;
   overflow: scroll;
   height: calc(100vh - 165px);
+}
+
+.pet-name {
+  font-size: 24px;
 }
 
 .create-report {
@@ -145,14 +160,21 @@ h1 {
   float: right;
   margin-right: 20px;
   font-size: 24px;
+  color: green;
+}
+
+.create-report:hover {
+  color: rgb(15, 217, 17);
 }
 
 .sitterpage {
   @include span-columns(12);
   border: 2px solid black;
   display: inline-block;
-  float: left;
+  // float: left;
 }
+
+
 
 .clients {
   @include span-columns(3);
@@ -161,9 +183,9 @@ h1 {
 
 
 .dashboard {
-  // padding-left: 10px;
-  @include span-columns(9);
-  // @include shift(3)
+
+  @include span-columns(8);
+  @include shift(1);
   display: inline-block;
   // overflow: scroll;
   // height: calc(100vh - 165px);
@@ -181,15 +203,21 @@ h1 {
   display: inline-block;
 }
 
+.little {
+  float: right;
+}
+
+
 .owner-page {
   @include span-columns(12);
+  border: 2px solid black;
   display: inline-block;
 }
 
 .add-pet {
   @include span-columns(12);
-
 }
+
 .my-pets {
   @include span-columns(3);
   display: inline-block;

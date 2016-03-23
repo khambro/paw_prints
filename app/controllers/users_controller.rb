@@ -28,7 +28,7 @@ class UsersController < ApplicationController
       @role.save
       redirect_to "/account/#{@user.id}"
     else
-      redirect_to "/new-owner", notice: "Username or email not complete, or passwords do not match. You tell me!"
+      redirect_to "/new-owner", notice: "Username or email not complete, or passwords do not match."
     end
   end
 
@@ -38,9 +38,9 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       @role = Role.new(role: (params[:role][:role]), user_id: @user.id)
       @role.save
-      redirect_to "/account/#{@current_user.id}"
+      redirect_to "/account/#{@user.id}"
     else
-      redirect_to "/new-sitter", notice: "Username or email not complete, or passwords do not match. You tell me!"
+      redirect_to "/new-sitter", notice: "Username or email not complete, or passwords do not match."
     end
   end
 
@@ -48,9 +48,6 @@ class UsersController < ApplicationController
 
   end
 
-  def sign_in
-
-  end
 
   def account
     @pets = Pet.where(owner_id: @current_user.id)
@@ -99,7 +96,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :bio, :phone, :username, :name, :role, :current_city, :password_confirmation)
+    params.require(:user).permit(:bio, :email, :password, :phone, :username, :name, :role, :current_city, :password_confirmation)
   end
 
 end
