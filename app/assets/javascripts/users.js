@@ -28,10 +28,13 @@ $(document).ready(function() {
 
       console.log($(".create-report"));
       var report = [];
+      var day
       for (i=0; i<data["reports"].length; i++ ) {
         report[i] = []
         report[i].push("Today's activities:" + data["reports"][i]["activity"]);
-        report[i].push("Date:" + data["reports"][i]["created_at"]);
+        // var day = new Date(data["reports"][i]["created_at"], "YYYY-MM-DD HH:mm");
+        // console.log(day);
+        report[i].push("Date:" + moment(data["reports"][i]["created_at"]).format("dddd, MMMM Do YYYY"));
         report[i].push("Mood:" + data["reports"][i]["emotion"]);
         report[i].push(data["reports"][i]["images"][0]["square_image"]);
       }
