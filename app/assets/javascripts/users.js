@@ -9,6 +9,10 @@ $(document).ready(function() {
     $(".showit").show();
   });
 
+  $(".show").click(function() {
+    $(".update").show();
+  });
+
 
   $(".pet").click(function() {
     var url = this.href;
@@ -26,13 +30,12 @@ $(document).ready(function() {
       var report = [];
       for (i=0; i<data["reports"].length; i++ ) {
         report[i] = []
-        report[i].push(data["reports"][i]["activity"]);
-        report[i].push(data["reports"][i]["created_at"]);
-        report[i].push(data["reports"][i]["emotion"]);
-        report[i].push(data["reports"][i]["images"][0]["image_url"]["url"]);
-        // report[i].push(data["reports"][i]["images"][0]["square_url"]["url"])
-
+        report[i].push("Today's activities:" + data["reports"][i]["activity"]);
+        report[i].push("Date:" + data["reports"][i]["created_at"]);
+        report[i].push("Mood:" + data["reports"][i]["emotion"]);
+        report[i].push(data["reports"][i]["images"][0]["square_image"]);
       }
+      report = report.reverse();
 
 
       var reports = $(".reportcard")
@@ -47,7 +50,6 @@ $(document).ready(function() {
         var image = $("<img>")
         div.append(h2.text(report[i][0]), h22.text(report[i][1]), h23.text(report[i][2]), image.attr("src", report[i][3]));
         reports.append(div);
-        console.log(reports);
       }
 
     });

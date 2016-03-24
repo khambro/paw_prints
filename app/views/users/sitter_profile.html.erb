@@ -1,14 +1,29 @@
-<h2><%= @sitter.name %></h2>
-<h3><%= @sitter.email %></h3>
-<%= gravatar_for "#{@sitter.email}" %>
-<h3><%= @sitter.phone %></h3>
-<h3><%= @sitter.bio %></h3>
+<div class="profile">
+  <h2><%= @sitter.name %></h2>
+  <h3><%= @sitter.email %></h3>
+  <% if @sitter.picture != nil %>
+    <%= image_tag @sitter.picture.url:square %>
+  <% else %>
+    <%= image_tag "pna.png" %>
+  <% end %>
+  <h3><%= @sitter.phone %></h3>
+  <h3>About <%= @sitter.name %></h3>
+     <p><%= @sitter.bio %></p>
 
-
-
-<% if current_user == @sitter %>
-  <a><%= link_to "Edit Profile", "#" %></a>
-<% else %>
-  <h2><%= form_tag "/select-sitter/#{@sitter.id}" %> </h2>
-  <%= submit_tag "Select #{@sitter.name} as your sitter" %>
-<% end %>
+  <% if current_user == @sitter %>
+  <a class="show">Edit Profile</a>
+    <div class= "update" style="display:none">
+      <%= form_tag "/edit-sitter/#{@sitter.id}", multipart: true  do %>
+        <%= text_field_tag "user[bio]", nil, placeholder: "bio", class: "bio", :required => true  %>
+      <br>
+        <%= label_tag "Change Image" %>
+        <%= file_field_tag "user[picture]" %>
+      <br>
+        <%= submit_tag "Update Profile" %>
+      <%end%>
+    </div>
+  <% else %>
+    <h2><%= form_tag "/select-sitter/#{@sitter.id}" %> </h2>
+    <%= submit_tag "Select #{@sitter.name} as your sitter" %>
+  <% end %>
+</div>

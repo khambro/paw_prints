@@ -98,12 +98,10 @@
         <% @pets.each do |p|%>
           <h3>Dashboard for <%= p.name %> </h3>
         </div>
-        <h2>Reports</h2>
         <div class= "reportcard">
           <% @pets.each do |p|%>
-            <% p.reports.each do|r| %>
+            <% p.reports.reverse.each do|r| %>
             <div class= "individual">
-
 
               <h2>Report for <%= r.created_at.strftime("%A, %b %d") %> </h2>
               <p>Sitter: <%= link_to "#{r.sitter.name}", "/sitter-profile/#{r.sitter.id}"  %> </p>
@@ -112,10 +110,10 @@
               </div>
               <div class= "images">
                 <% r.images.each do |i| %>
-                  <%= image_tag i.image_url.url(:square) %>
+                  <%= image_tag i.image_url.url(:image) %>
                 <% end  %>
               </div>
-              </div>  
+              </div>
             <% end %>
           <% end %>
         <% end %>

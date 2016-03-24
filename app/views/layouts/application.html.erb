@@ -24,9 +24,9 @@
           <li><button class= "notblue"><%= link_to "Sign In", "/user-sign-in" %></button></li>
         <% else %>
           <li><button class= "notblue"><%= link_to "Sign Out", sign_out_path %></button></li>
-          <li><button class= "notblue"><%= link_to "My Account", "/account/#{@current_user.id}" %></button></li>
+          <li><button class= "notblue"><%= link_to "My Dashboard", "/account/#{@current_user.id}" %></button></li>
           <% if @current_user.user_roles.include?("sitter") %>
-            <li><button class= "notblue"><%= link_to "Edit My Profile", "/sitter-profile/#{@current_user.id}/edit" %></button></li>
+            <li><button class= "notblue"><%= link_to "View My Profile", "/sitter-profile/#{@current_user.id}" %></button></li>
           <% end %>
         <% end %>
       </ul>

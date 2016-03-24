@@ -39,6 +39,7 @@ body {
 .icon  {
   display: inline-block;
   float: left;
+  margin-left: 125px;
 }
 
 h1 {
@@ -126,6 +127,14 @@ h1 {
   color: black;
 }
 
+.row {
+  @include span-columns(12);
+}
+.sitter-row {
+  @include span-columns(3);
+  border: 2px solid black;
+}
+
 // report cards
 
 .user-dash {
@@ -160,17 +169,27 @@ h1 {
   float: right;
   margin-right: 20px;
   font-size: 24px;
-  color: green;
+  color: rgb(20, 147, 67);
 }
 
 .create-report:hover {
   color: rgb(15, 217, 17);
 }
 
+.little {
+  color: rgb(20, 147, 67);
+}
+
+.little:hover {
+  color: rgb(15, 217, 17);
+}
 .sitterpage {
-  @include span-columns(12);
-  border: 2px solid black;
+  @include span-columns(10);
+  @include shift(1);
+
+  // border: 2px solid black;
   display: inline-block;
+  background-color: rgba(227, 241, 227, 0.5);
   // float: left;
 }
 
@@ -221,4 +240,18 @@ h1 {
 .my-pets {
   @include span-columns(3);
   display: inline-block;
+  border-right: 1px solid rgb(244, 233, 245);
+}
+
+.my-sitters {
+  margin-top: 20px;
+  border-top: 1px solid rgb(244, 233, 245);
+  h2 {
+    margin-top: 15px;
+  }
+}
+
+.profile {
+  @include span-columns(8);
+  @include shift(4);
 }

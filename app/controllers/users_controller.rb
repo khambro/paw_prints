@@ -62,6 +62,7 @@ class UsersController < ApplicationController
   def update_sitter_profile
     @update = User.find(params[:id])
     @update.bio = params[:user][:bio]
+    @update.picture = params[:user][:picture]
     @update.save
     if @update.save
       redirect_to "/account/#{@current_user.id}"
@@ -91,12 +92,10 @@ class UsersController < ApplicationController
 
 
 
-
-
   private
 
   def user_params
-    params.require(:user).permit(:bio, :email, :password, :phone, :username, :name, :role, :current_city, :password_confirmation)
+    params.require(:user).permit(:bio, :email, :password, :phone, :username, :name, :role, :current_city, :password_confirmation, :picture)
   end
 
 end
