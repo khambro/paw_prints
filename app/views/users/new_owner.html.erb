@@ -2,7 +2,7 @@
 
   <h1>Sign Up</h1>
 
-  <%= form_tag "/new-owner" do %>
+  <%= form_tag "/new-owner", class:"sitter-form" do %>
     <input type="hidden" name="role[role]" value="owner"/>
     <%= render partial: "new_user_form" %>
   <%end%>

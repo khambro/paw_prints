@@ -1,25 +1,27 @@
 <h2>Available sitters</h2>
 
-<% @sitters.in_groups_of(4, false).each do |group| %>
-<div class="row">
-  <% group.each do |s| %>
-  <div class="sitter-row">
-    <%= link_to "#{s.user.name}", "/sitter-profile/#{s.user.id}" %>
-    <h2><%= s.user.name %></h2>
-    <!-- <h3><%= s.user.email %></h3> -->
-    <!-- <%= image_tag "pna.png" %> -->
-    <% if s.user.picture.url != nil %>
-      <%= image_tag s.user.picture.url:square %>
+<% if @sitters.count > 0 %>
+  <% @sitters.in_groups_of(4, false).each do |group| %>
+  <div class="row">
+    <% group.each do |s| %>
+    <div class="sitter-row">
+      <%= link_to "#{s.user.name}", "/sitter-profile/#{s.user.id}" %>
+      <h2><%= s.user.name %></h2>
+      <!-- <h3><%= s.user.email %></h3> -->
+      <!-- <%= image_tag "pna.png" %> -->
+      <% if s.user.picture.url != nil %>
+        <%= image_tag s.user.picture.url:square %>
 
-    <% else %>
-      <%= image_tag "pna.png" %>
-    <% end %>
-    <h3><%= s.user.phone %></h3>
-    <h3>About <%= s.user.name %></h3>
-    <p><%= s.user.bio %></p>
-    <h2><%= form_tag "/select-sitter/#{s.user.id}" %> </h2>
-    <%= submit_tag "Select #{s.user.name} as your sitter" %>
+      <% else %>
+        <%= image_tag "pna.png" %>
+      <% end %>
+      <h3><%= s.user.phone %></h3>
+      <h3>About <%= s.user.name %></h3>
+      <p><%= s.user.bio %></p>
+      <h2><%= form_tag "/select-sitter/#{s.user.id}" %> </h2>
+      <%= submit_tag "Select #{s.user.name} as your sitter" %>
+    </div>
+      <% end %>
   </div>
-    <% end %>
-</div>
-<% end %>
+  <% end %>
+<% end %>  

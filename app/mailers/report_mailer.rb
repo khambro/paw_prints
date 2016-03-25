@@ -9,7 +9,7 @@ class ReportMailer < ApplicationMailer
 
   def invite(unregistered_id)
     @unregistered = Unregister.find(unregistered_id)
-    mail(to: "khambro@yahoo.com", subject: "Sign Up for PetFinder to Updates for Your Pets")
+    mail(to: "#{@report.pet.owner.email}", subject: "Sign Up for PetFinder for Updates on Your Pets")
   end
 
 

@@ -10,9 +10,7 @@
 <% end %>
 
 <% if current_user.user_roles.include?("sitter")%>
-
   <div class ="sitterpage">
-
   <div class= "clients">
     <h2>My Clients</h2>
     <a class="client">Add new client</a>
@@ -44,9 +42,11 @@
     <div class = "petdeets">
       <h3><span class="pet-name"></span> </h3>
       <a class="create-report" href=""></a>
-      <h4><span class="owner-name"></span></h4>
-      <h4><span class="owner-email"></span></h4>
-      <h4><span class="owner-phone"></span></h4>
+      <div class="owner-info">
+        <h4><span class="owner-name"></span></h4>
+        <h4><span class="owner-email"></span></h4>
+        <h4><span class="owner-phone"></span></h4>
+      </div>
     </div>
     <h2>Reports</h2>
     <div class= "reportcard">
@@ -77,7 +77,7 @@
     <div class="my-pets">
       <h2>My Pets</h2>
       <% @pets.each do |p|%>
-        <h3 class="pet2">Pet: <%= link_to p.name, "/pet/#{p.id}"%> </h3>
+        <h3 class="pet2"><%= p.name%> </h3>
       <% end %>
 
     <div class="my-sitters">
@@ -93,16 +93,43 @@
     </div>
   </div>
 
-    <div class= "dashboard">
-      <div class = "petdeets">
-        <% @pets.each do |p|%>
-          <h3>Dashboard for <%= p.name %> </h3>
+
+    <% if @pets.count > 1 %>
+      <div class= "dboards">
+        <% @pets.in_groups_of(2, false).each do |group| %>
+        <div class="animals">
+          <% group.each do |pet| %>
+            <div class="sitter-row">
+              <h3>Dashboard for <%= pet.name %> </h3>
+              <div class= "reportcard">
+                <% pet.reports.reverse.each do|r| %>
+                <div class= "individual">
+                  <h2>Report for <%= r.created_at.strftime("%A, %b %d") %> </h2>
+                  <p>Sitter: <%= link_to "#{r.sitter.name}", "/sitter-profile/#{r.sitter.id}"  %> </p>
+                  <div class= "activity">
+                    <p> <%= r.pet.name %> spent a large part of the day <%= r.activity %>. The day was filled with lots of excitement and <%= r.pet.name %> was <%= r.emotion %> most of the day.</p>
+                  </div>
+                  <div class= "images">
+                    <% r.images.each do |i| %>
+                      <%= image_tag i.image_url.url(:image) %>
+                    <% end  %>
+                  </div>
+                </div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
         </div>
-        <div class= "reportcard">
-          <% @pets.each do |p|%>
+    </div>
+    <% else %>
+    <div class= "dboards">
+    <% @pets.each do |p| %>
+    <div class="animals">
+          <h3>Dashboard for <%= p.name %> </h3>
+          <div class= "reportcard">
             <% p.reports.reverse.each do|r| %>
             <div class= "individual">
-
               <h2>Report for <%= r.created_at.strftime("%A, %b %d") %> </h2>
               <p>Sitter: <%= link_to "#{r.sitter.name}", "/sitter-profile/#{r.sitter.id}"  %> </p>
               <div class= "activity">
@@ -113,15 +140,11 @@
                   <%= image_tag i.image_url.url(:image) %>
                 <% end  %>
               </div>
-              </div>
+            </div>
             <% end %>
-          <% end %>
-        <% end %>
-
-      </div>
-
+          </div>
+      <% end %>
+    <% end %>
     </div>
-
-
-  </div>
+</div>
 <% end %>

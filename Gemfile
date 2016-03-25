@@ -31,6 +31,8 @@ gem 'twilio-ruby', '~> 4.11.1'
 
 gem 'momentjs-rails', '~> 2.11'
 
+gem 'jwt', '1.5.4'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 
 

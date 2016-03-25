@@ -1,7 +1,24 @@
 body {
   // background-color: #78e4c4;
   font-family: 'Sarala', sans-serif;
+  background-color: #edf5f6;
 }
+
+.background {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: image-url("golden.jpg");
+  //  no-repeat center center fixed;
+  background-repeat: no-repeat;
+  // -webkit-background-size: cover;
+  -moz-background-size: cover;
+  // -o-background-size: cover;
+  // background-size: cover;
+}
+
+
 
 .header {
     @include span-columns(12);
@@ -33,13 +50,13 @@ body {
   background-color: black;
   display: inline-block;
   float: right;
-
 }
 
 .icon  {
+  @include span-columns(3);
   display: inline-block;
-  float: left;
-  margin-left: 125px;
+  margin: 8px;
+
 }
 
 h1 {
@@ -47,21 +64,26 @@ h1 {
 }
 
 .title {
+  @include span-columns(5);
   font-family: 'Sarala', sans-serif;
   font-size: 46px;
   font-weight: 700;
+  margin-top: 60px;
+  margin-left: 12px;
 }
 
 .user-type {
-  @include span-columns(10);
-  @include shift(2);
-  padding-top: 50px;
+  @include span-columns(7);
+  padding-top: 100px;
+  margin-left: 30px;
 }
 
 .owner {
-  @include span-columns(5);
-  display: inline-block;
-  background-color: #b0096d;
+  @include span-columns(4);
+  display: block;
+  float: left;
+  background-color: rgb(129, 121, 105);
+  // background-color: #b0096d;
   font-size: 24px;
   height: 150px;
   border-radius: 20px;
@@ -78,7 +100,8 @@ h1 {
 
 
 .owner:hover {
-  background-color: #e641a4;
+  // background-color: #e641a4;
+  background-color: #6bf260;
   cursor: pointer;
   box-shadow: none;
 }
@@ -94,9 +117,11 @@ h1 {
 }
 
 .sitter {
-  @include span-columns(5);
-  display: inline-block;
-  background-color: #2ae21a;
+  @include span-columns(4);
+  display: block;
+  float: left;
+  // background-color: #2ae21a;
+  background-color: rgb(82, 138, 84);
   border-width: 3px;
   border-color: rgba(35, 179, 21, 0.7);
   font-size: 24px;
@@ -129,13 +154,21 @@ h1 {
 
 .row {
   @include span-columns(12);
+  display: inline-block;
 }
 .sitter-row {
-  @include span-columns(3);
+  @include span-columns(6);
+  display: inline-block;
+
   border: 2px solid black;
 }
 
+
 // report cards
+
+.report-image {
+  margin-left: 25px;
+}
 
 .user-dash {
   font-size: 36px;
@@ -158,6 +191,10 @@ h1 {
   display: inline-block;
   overflow: scroll;
   height: calc(100vh - 165px);
+}
+
+img, picture {
+  @margin-left: 30px;
 }
 
 .pet-name {
@@ -194,6 +231,30 @@ h1 {
 }
 
 
+.owner-info {
+  @include span-columns(12);
+  background-color: rgba(157, 162, 231, 0.2);
+
+}
+
+.jsreport {
+  @include span-columns(10);
+  @include shift(2);
+  border: 2px solid black;
+
+}
+
+
+.email-reportcard {
+  background-color: #fff;
+  background-image:
+  linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+  linear-gradient(#eee .1em, transparent .1em);
+  background-size: 100% 1.2em;
+
+}
+
+
 
 .clients {
   @include span-columns(3);
@@ -202,7 +263,6 @@ h1 {
 
 
 .dashboard {
-
   @include span-columns(8);
   @include shift(1);
   display: inline-block;
@@ -243,6 +303,12 @@ h1 {
   border-right: 1px solid rgb(244, 233, 245);
 }
 
+.dboards {
+  @include span-columns(8);
+}
+
+
+
 .my-sitters {
   margin-top: 20px;
   border-top: 1px solid rgb(244, 233, 245);
@@ -254,4 +320,9 @@ h1 {
 .profile {
   @include span-columns(8);
   @include shift(4);
+}
+
+
+.sitter-form {
+  @include span-columns(5);
 }
