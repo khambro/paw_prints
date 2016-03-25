@@ -4,4 +4,6 @@ class Pet < ActiveRecord::Base
   has_many :reports
   has_many :sitter_records
   has_many :images
+  mount_uploader :picture, ImageUploader
+  validates :picture, presence: true
 end

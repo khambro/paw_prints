@@ -6,7 +6,7 @@
   <% else %>
     <%= image_tag "pna.png" %>
   <% end %>
-  <h3><%= @sitter.phone %></h3>
+  <h3><%= number_to_phone(@sitter.phone)%></h3>
   <h3>About <%= @sitter.name %></h3>
      <p><%= @sitter.bio %></p>
 

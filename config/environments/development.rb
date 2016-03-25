@@ -39,11 +39,11 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
+    address:              'email-smtp.us-west-2.amazonaws.com',
     port:                 587,
     domain:               'example.com',
-    user_name:            ENV["MAIL_USERNAME"],
-    password:             ENV["MAIL_PASSWORD"],
+    user_name:            ENV["SMTP_Username"],
+    password:             ENV["SMTP_Password"],
     authentication:       'plain',
     enable_starttls_auto: true
   }

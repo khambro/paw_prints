@@ -9,18 +9,20 @@ class PetsController < ApplicationController
 
   def create
     @pet = Pet.new(pet_params)
-
+    # @pet.picture = params[:pet][:picture]
     if @pet.save
       redirect_to "/account/#{@current_user.id}"
     else
-      redirect_to "/new-owner", notice: "Username or email not complete, or passwords do not match. You tell me!"
+      redirect_to "/new-owner", notice: @pet.errors
     end
+
   end
 
 
 
   def show
     @pet = Pet.find_by(id: params[:id])
+
     @sitter_ids = []
     @images = []
     @pet.reports.each do |i|
@@ -36,7 +38,6 @@ class PetsController < ApplicationController
       owner: @pet.owner,
       reports: @pet.reports.as_json(include: {images: {methods: :square_image} } )
       }
-
   end
 
   def profile
@@ -47,7 +48,7 @@ class PetsController < ApplicationController
   private
 
   def pet_params
-    params.require(:pet).permit(:owner_id, :name, :breed, :color, :sitter_id)
+    params.require(:pet).permit(:picture, :owner_id, :name, :breed, :color, :sitter_id)
   end
 
 

@@ -63,7 +63,7 @@
   <div class= "owner-page">
     <a class="add-pet">Add Pet</a>
     <h3 class="show-form" style="display: none" >
-      <%= form_tag "/new-pet" do %>
+      <%= form_tag "/new-pet", multipart: true do %>
         <input type="hidden" name="pet[owner_id]" value="<%= current_user.id %>" />
         <%= text_field_tag "pet[name]", nil, placeholder: "name", class: "name", :required => true  %>
         <br>
@@ -71,7 +71,9 @@
         <br>
         <%= text_field_tag "pet[color]", nil, placeholder: "color", class: "color", :required => true  %>
         <br>
-        <%= submit_tag %>
+        <%= label_tag "Upload Photo" %>
+        <%= file_field_tag "pet[picture]" %>
+        <%= submit_tag "Add Pet" %>
       <%end%>
     </h3>
     <div class="my-pets">
@@ -83,10 +85,10 @@
     <div class="my-sitters">
       <h2>My Sitters</h2>
       <%= link_to "Find New Sitter", "/sitters" %>
-        <% if @sitter_records %>
-          <% @sitter_records.each do |s| %>
+        <% if @my_sitters %>
+          <% @my_sitters.each do |s| %>
           <div>
-              <%= link_to "#{s.sitter.name}", "/sitter-profile/#{s.sitter_id}" %>
+              <%= link_to "#{s.sitter.name}", "/sitter-profile/#{s.sitter.id}" %>
           </div>
           <% end %>
         <% end %>
@@ -101,6 +103,7 @@
           <% group.each do |pet| %>
             <div class="sitter-row">
               <h3>Dashboard for <%= pet.name %> </h3>
+              <div class="petpic"><%= image_tag pet.picture.image.url %> </div>
               <div class= "reportcard">
                 <% pet.reports.reverse.each do|r| %>
                 <div class= "individual">
@@ -127,6 +130,7 @@
     <% @pets.each do |p| %>
     <div class="animals">
           <h3>Dashboard for <%= p.name %> </h3>
+          <div class="petpic"><%= image_tag p.picture.image.url %> </div>
           <div class= "reportcard">
             <% p.reports.reverse.each do|r| %>
             <div class= "individual">

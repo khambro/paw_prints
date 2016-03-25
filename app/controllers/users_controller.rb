@@ -45,14 +45,19 @@ class UsersController < ApplicationController
   end
 
   def new_sitter
-
   end
-
 
   def account
     @pets = Pet.where(owner_id: @current_user.id)
     @clients = SitterRecord.where(sitter_id: @current_user.id)
     @sitter_records = SitterRecord.where(owner_id: @current_user.id)
+    @my_sitters = []
+    @sitter_records.each do |s|
+      # if !@my_sitters.include?(s.sitter.id)
+        @my_sitters << s
+      # end
+    end
+    
   end
 
   def sitter_profile
@@ -82,11 +87,9 @@ class UsersController < ApplicationController
   def select_sitter
     @pets = Pet.where(owner_id: @current_user.id)
     @sitter = User.find(params[:id])
-    @sitter_record = SitterRecord.new(sitter_id: @sitter.id, owner_id: @current_user.id)
     @pets.each do |p|
-      @sitter_record[:pet_id] = p.id
+      SitterRecord.create(sitter_id: @sitter.id, owner_id: @current_user.id, pet_id: p.id)
     end
-    @sitter_record.save
     redirect_to "/account/#{@current_user.id}"
   end
 
