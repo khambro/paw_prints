@@ -31,6 +31,8 @@ Rails.application.routes.draw do
 
   get "/pet/:id", to: "pets#show"
 
+  get "yappytrailsclub/about", to: "reports#about", as: :about
+
 
 
 

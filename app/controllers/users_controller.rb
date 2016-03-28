@@ -26,7 +26,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       @role = Role.new(role: (params[:role][:role]), user_id: @user.id)
       @role.save
-      redirect_to "/account/#{@user.id}"
+      redirect_to "/new-pet"
     else
       redirect_to "/new-owner", notice: "Username or email not complete, or passwords do not match."
     end
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       @role = Role.new(role: (params[:role][:role]), user_id: @user.id)
       @role.save
-      redirect_to "/account/#{@user.id}"
+      redirect_to "/sitter-profile/#{@user.id}"
     else
       redirect_to "/new-sitter", notice: "Username or email not complete, or passwords do not match."
     end
@@ -53,11 +53,8 @@ class UsersController < ApplicationController
     @sitter_records = SitterRecord.where(owner_id: @current_user.id)
     @my_sitters = []
     @sitter_records.each do |s|
-      # if !@my_sitters.include?(s.sitter.id)
-        @my_sitters << s
-      # end
+      @my_sitters << s unless @my_sitters.include?(s.sitter_id)
     end
-    
   end
 
   def sitter_profile

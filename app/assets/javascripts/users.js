@@ -13,6 +13,8 @@ $(document).ready(function() {
     $(".update").show();
   });
 
+  // $('#phone').mask('(000-000-0000)');
+
 
   $(".pet").click(function() {
     var url = this.href;
@@ -22,11 +24,13 @@ $(document).ready(function() {
       $(".pet-name").html("Dashboard for " + data["pet"]["name"]);
       $(".owner-name").html("Owner: " + data["owner"]["name"]);
       $(".owner-phone").html("Phone: " + data["owner"]["phone"]);
+
       $(".owner-email").html("Email: " + data["owner"]["email"]);
+      $(".pet-photo").attr("src", data["pet"]["picture"]["profile"]["url"]);
       $(".petdeets").prepend($(".create-report").attr("href", "/report/" + data["pet"]["id"]));
       $(".create-report").html("Create Report")
 
-      console.log($(".create-report"));
+      console.log($(".pet-photo"));
       var report = [];
       for (i=0; i<data["reports"].length; i++ ) {
         report[i] = []

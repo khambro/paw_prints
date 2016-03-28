@@ -1,6 +1,7 @@
 body {
   // background-color: #78e4c4;
-  font-family: 'Sarala', sans-serif;
+  // font-family: 'Sarala', sans-serif;
+  font-family: 'Lato', sans-serif;
   background-color: #edf5f6;
 }
 
@@ -17,8 +18,6 @@ body {
   // -o-background-size: cover;
   // background-size: cover;
 }
-
-
 
 .header {
     @include span-columns(12);
@@ -82,7 +81,8 @@ h1 {
   @include span-columns(4);
   display: block;
   float: left;
-  background-color: rgb(129, 121, 105);
+  background-color: #FF686B;
+  // background-color: rgb(129, 121, 105);
   // background-color: #b0096d;
   font-size: 24px;
   height: 150px;
@@ -101,7 +101,8 @@ h1 {
 
 .owner:hover {
   // background-color: #e641a4;
-  background-color: #6bf260;
+  // background-color: #6bf260;
+  background-color: #FFA69E;
   cursor: pointer;
   box-shadow: none;
 }
@@ -121,7 +122,8 @@ h1 {
   display: block;
   float: left;
   // background-color: #2ae21a;
-  background-color: rgb(82, 138, 84);
+  background-color: #84DCC6;
+  // background-color: rgb(82, 138, 84);
   border-width: 3px;
   border-color: rgba(35, 179, 21, 0.7);
   font-size: 24px;
@@ -131,8 +133,9 @@ h1 {
 }
 
 .sitter:hover {
-  background-color: #6bf260;
+  // background-color: #6bf260;
   cursor: pointer;
+  background-color: #A5FFD6;
 
 }
 
@@ -143,6 +146,7 @@ h1 {
   padding: 1em;
   margin: -3em;
 }
+
 .sitter h2 {
   padding-top: 45px;
   text-align: center;
@@ -156,12 +160,30 @@ h1 {
   @include span-columns(12);
   display: inline-block;
 }
+
 .sitter-row {
   @include span-columns(6);
   display: inline-block;
+  .p-name {
+    text-align: center;
+   }
+  }
 
-  border: 2px solid black;
+.animal-info {
+  @include span-columns(12);
+  background-color: rgba(157, 162, 231, 0.2);
 }
+
+
+  .petpic {
+
+    text-align: right;
+    img {
+      border-radius: 5%;
+    }
+  }
+
+
 
 
 // report cards
@@ -186,7 +208,8 @@ h1 {
 
 
 .reportcard {
-  @include span-columns(10);
+  @include span-columns(12);
+  // @include shift(1);
   border: 1px solid #dbc7c4;
   display: inline-block;
   overflow: scroll;
@@ -220,6 +243,7 @@ img, picture {
 .little:hover {
   color: rgb(15, 217, 17);
 }
+
 .sitterpage {
   @include span-columns(10);
   @include shift(1);
@@ -234,7 +258,15 @@ img, picture {
 .owner-info {
   @include span-columns(12);
   background-color: rgba(157, 162, 231, 0.2);
+}
 
+.left {
+  @include span-columns(9);
+}
+
+.pet-photo {
+  @include span-columns(3);
+  float: right;
 }
 
 .jsreport {
@@ -246,14 +278,8 @@ img, picture {
 
 
 .email-reportcard {
-  background-color: #fff;
-  background-image:
-  linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
-  linear-gradient(#eee .1em, transparent .1em);
-  background-size: 100% 1.2em;
-
+  border: 1px solid black;
 }
-
 
 
 .clients {
@@ -286,27 +312,38 @@ img, picture {
   float: right;
 }
 
+// **********OWNER PAGE******************
 
-.owner-page {
-  @include span-columns(12);
-  border: 2px solid black;
+
+.ownerpage {
+  @include span-columns(10);
+  @include shift(1);
   display: inline-block;
+  background-color: rgba(227, 241, 227, 0.5);
 }
 
+
+
 .add-pet {
-  @include span-columns(12);
+  @include span-columns(11);
+  @include shift(1);
 }
 
 .my-pets {
   @include span-columns(3);
+  @include shift(1);
   display: inline-block;
   border-right: 1px solid rgb(244, 233, 245);
 }
 
+
 .dboards {
-  @include span-columns(8);
+  @include span-columns(7);
 }
 
+.sitter-round {
+  border-radius: 50%;
+}
 
 
 .my-sitters {
@@ -325,4 +362,9 @@ img, picture {
 
 .sitter-form {
   @include span-columns(5);
+}
+
+
+.footer {
+  
 }

@@ -9,4 +9,8 @@ class Image < ActiveRecord::Base
     image_url.url(:image)
   end
 
+  def profile_image
+    picture.picture.url(:profile)
+  end
+
 end

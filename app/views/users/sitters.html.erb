@@ -10,7 +10,7 @@
       <!-- <h3><%= s.user.email %></h3> -->
       <!-- <%= image_tag "pna.png" %> -->
       <% if s.user.picture.url != nil %>
-        <%= image_tag s.user.picture.url:square %>
+        <%= image_tag s.user.picture.url:square, class:"sitter-round" %>
 
       <% else %>
         <%= image_tag "pna.png" %>

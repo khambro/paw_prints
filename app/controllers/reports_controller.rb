@@ -14,6 +14,9 @@ class ReportsController < ApplicationController
     redirect_to "/account/#{@current_user.id}"
   end
 
+  def about
+  end
+
 
   private
 

@@ -2,7 +2,7 @@
   <h2><%= @sitter.name %></h2>
   <h3><%= @sitter.email %></h3>
   <% if @sitter.picture != nil %>
-    <%= image_tag @sitter.picture.url:square %>
+    <%= image_tag @sitter.picture.url(:square), class:"sitter-round" %>
   <% else %>
     <%= image_tag "pna.png" %>
   <% end %>

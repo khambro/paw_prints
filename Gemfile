@@ -27,9 +27,11 @@ gem 'neat'
 gem 'bitters'
 gem 'refills'
 
+
 gem 'twilio-ruby', '~> 4.11.1'
 
 gem 'momentjs-rails', '~> 2.11'
+gem 'jquery-mask-plugin', '~> 0.1.0'
 
 gem 'jwt', '1.5.4'
 

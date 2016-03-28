@@ -1,11 +1,9 @@
-<h1>New Pet Form</h1>
-
 
 <div class="new-pet">
 
   <h1>Create a Pet Profile!</h1>
 
-  <%= form_tag "/new-pet" do %>
+  <%= form_tag "/new-pet", multipart: true do %>
     <input type="hidden" name="pet[owner_id]" value="<%= current_user.id %>" />
     <%= text_field_tag "pet[name]", nil, placeholder: "name", class: "name", :required => true  %>
     <br>
@@ -13,8 +11,9 @@
     <br>
     <%= text_field_tag "pet[color]", nil, placeholder: "color", class: "color", :required => true  %>
     <br>
-
-    <%= submit_tag %>
+    <%= label_tag "Upload Photo" %>
+    <%= file_field_tag "pet[picture]" %>
+    <%= submit_tag "Add Pet" %>
   <%end%>
 
 </div>
