@@ -16,13 +16,14 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'puma'
 
 gem "carrierwave", "~> 0.10.0"
 gem 'fog'
 gem 'dotenv-rails'
 gem 'mini_magick'
 
-gem 'bourbon'
+gem 'bourbon', '~> 4.2', '>= 4.2.6'
 gem 'neat'
 gem 'bitters'
 gem 'refills'
