@@ -58,10 +58,11 @@
 
   </div>
 </div> -->
- <div class="grid-items-lines">
+ <!-- <div class="grid-items-lines">
   <a href="javascript:void(0)" class="grid-item">
-    <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2_dark.png" alt="">
-    <h1>My Clients</h1>
+
+    <!-- <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2_dark.png" alt=""> -->
+    <!-- <h1>My Clients</h1>
     <a class="client">Add new client</a>
     <div class="showit" style="display: none">
       <%= form_tag "/new-client" do %>
@@ -85,9 +86,7 @@
         </div>
       <% end %>
     <% end %>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
+
   </a>
   <a href="javascript:void(0)" class="grid-item grid-item-big dashboard petdeets">
     <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2_dark.png" alt="">
@@ -112,8 +111,59 @@
   </a>
   <div class="right-cover"></div>
   <div class="bottom-cover"></div>
-</div>
+</div> -->
 
+
+
+<div class="side-image">
+  <div class="images-wrapper">
+    <h1>My Clients</h1>
+    <a class="client">Add new client</a>
+    <div class="showit" style="display: none">
+      <%= form_tag "/new-client" do %>
+        <input type="hidden" name="role[role]" value="unregistered"/>
+        <%= text_field_tag "user[name]", nil, placeholder: "owner name", class: "name", :required => true %>
+        <%= email_field_tag "user[email]", nil, placeholder: "owner email", class: "email", :required => true %>
+        <%= text_field_tag "user[phone]", nil, placeholder: "owner phone", class: "phone", :required => true %>
+        <%= text_field_tag "pet[name]", nil, placeholder: "pet name", class: "pet", :required => true %>
+        <%= text_field_tag "pet[breed]", nil, placeholder: "pet breed", class: "pet breed", :required => true %>
+        <%= text_field_tag "pet[name]", nil, placeholder: "pet2", class: "pet2" %>
+        <%= submit_tag "Add Client"%>
+      <% end %>
+    </div>
+    <% if @clients.size >= 1 %>
+      <% @clients.each do |p| %>
+        <div class="">
+          <% if p.pet %>
+            <h3 class="pet">Pet: <%= link_to p.pet.name, "/pet/#{p.pet.id}", class: "pet" %>  </h3>
+            <a class="little-button"><%= link_to "Create Report", "/report/#{p.pet.id}", class:"little" %> </a>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+    <div class="side-image-content">
+      <h4>BLAH BLAH</h4>
+      <h1><span class="pet-name"></span></h1>
+      <a class="create-report" href=""></a>
+      <div class="owner-info">
+        <div class="left">
+          <h4><span class="owner-name"></span></h4>
+          <h4><span class="owner-email"></span></h4>
+          <h4><span class="owner-phone"></span></h4>
+        </div>
+        <img class="pet-photo" src=""></h4>
+      </div>
+
+      <div class= "reportcard">
+
+        
+
+      </div>
+    </div>
+
+  </div>
+</div>
 
 
 <% end %>
