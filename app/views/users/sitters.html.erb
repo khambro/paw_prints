@@ -15,7 +15,7 @@
       <% else %>
         <%= image_tag "pna.png" %>
       <% end %>
-      <h3><%= number_to_phone(s.user.phone) %></h3>
+      <!-- <h3><%= number_to_phone(s.user.phone) %></h3> -->
       <h3>About <%= s.user.name %></h3>
       <p><%= s.user.bio %></p>
       <h2><%= form_tag "/select-sitter/#{s.user.id}" %> </h2>

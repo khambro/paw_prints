@@ -1,6 +1,6 @@
 <% if !@current_user %>
   <div class="sign-in">
-    <h1>Sign In</h1>
+    <h1 class="in">Sign In</h1>
     <%= form_tag sign_in_path, class:"navbar-form" do %>
       <input type="email" name="email" placeholder="Email" class="form-control">
       <br>

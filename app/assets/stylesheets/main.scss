@@ -91,6 +91,7 @@ h1 {
 }
 
 .owner a {
+  text-decoration: none;
   display: inline-block;
   position: relative;
   z-index: 1;
@@ -140,6 +141,7 @@ h1 {
 }
 
 .sitter a {
+  text-decoration: none;
   display: inline-block;
   position: relative;
   z-index: 1;
@@ -210,7 +212,7 @@ h1 {
 .reportcard {
   @include span-columns(12);
   // @include shift(1);
-  border: 1px solid #dbc7c4;
+  border: 1px solid rgba(230, 226, 236, 0.3);
   display: inline-block;
   overflow: scroll;
   height: calc(100vh - 165px);
@@ -250,7 +252,8 @@ img, picture {
 
   // border: 2px solid black;
   display: inline-block;
-  background-color: rgba(227, 241, 227, 0.5);
+  background-color: rgba(224, 213, 244, 0.2);
+  // background-color: rgba(227, 241, 227, 0.5);
   // float: left;
 }
 
@@ -267,12 +270,13 @@ img, picture {
 .pet-photo {
   @include span-columns(3);
   float: right;
+  border-radius: 50%;
 }
 
 .jsreport {
-  @include span-columns(10);
-  @include shift(2);
-  border: 2px solid black;
+  @include span-columns(9);
+  @include shift(3);
+  border-bottom: 1px solid rgb(211, 226, 230);
 
 }
 
@@ -285,6 +289,7 @@ img, picture {
 .clients {
   @include span-columns(3);
   display: inline-block;
+  @include media(min-width 275px max-width 275px);
 }
 
 
@@ -364,7 +369,6 @@ img, picture {
   @include span-columns(5);
 }
 
-
-.footer {
-  
+.sign-in-up h1 {
+  @include span-columns(5);
 }

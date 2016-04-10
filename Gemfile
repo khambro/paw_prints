@@ -23,7 +23,8 @@ gem 'fog'
 gem 'dotenv-rails'
 gem 'mini_magick'
 
-gem 'bourbon', '~> 4.2', '>= 4.2.6'
+
+gem 'bourbon'
 gem 'neat'
 gem 'bitters'
 gem 'refills'

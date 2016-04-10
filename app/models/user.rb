@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   has_many :sitter_records
   validates :password, confirmation: true, presence: true, if: :needs_password?
-  validates :username, presence: true, uniqueness: true, if: :registered
+  validates :username, presence: true, if: :registered
   mount_uploader :picture, ImageUploader
 
 
