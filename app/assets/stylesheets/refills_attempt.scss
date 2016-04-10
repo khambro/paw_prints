@@ -21,7 +21,7 @@
   position: relative;
 
   .grid-item {
-    @include transition (all 0.2s ease-in-out);
+    // @include transition (all 0.2s ease-in-out);
     background: $grid-item-background;
     border-bottom: $grid-item-border;
     border-right: $grid-item-border;

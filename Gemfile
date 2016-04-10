@@ -24,9 +24,8 @@ gem 'dotenv-rails'
 gem 'mini_magick'
 
 
-gem 'bourbon'
+gem 'bourbon', "~> 4.2.6"
 gem 'neat'
-gem 'bitters'
 gem 'refills'
 
 
