@@ -18,21 +18,50 @@
 <% end %>
 
 
+<div class="wrapper-for-content-outside-of-footer">
+
   <div class="page-wrap">
-    <div class="header">
-      <%= link_to image_tag("paws2.png"), root_path, class: "icon" %>
-      <ul class="nav">
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <%= link_to image_tag("paws2.png"), root_path, class: "logo", alt: "Logo Image" %>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
         <% if !@current_user %>
-          <li><button class= "notblue"><%= link_to "Sign In", "/user-sign-in" %></button></li>
+          <li class="nav-link"><%= link_to "Sign In", "/user-sign-in" %></li>
         <% else %>
-          <li><button class= "notblue"><%= link_to "Sign Out", sign_out_path %></button></li>
-          <li><button class= "notblue"><%= link_to "My Dashboard", "/account/#{@current_user.id}" %></button></li>
-          <% if @current_user.user_roles.include?("sitter") %>
-            <li><button class= "notblue"><%= link_to "View My Profile", "/sitter-profile/#{@current_user.id}" %></button></li>
-          <% end %>
+
+        <li class="nav-link"><%= link_to "Sign Out", sign_out_path %></li>
+        <li class="nav-link"><%= link_to "My Dashboard", "/account/#{@current_user.id}" %></li>
+        <% if @current_user.user_roles.include?("sitter") %>
+          <li class="nav-link"><%= link_to "View My Profile", "/sitter-profile/#{@current_user.id}" %></li>
         <% end %>
+      <% end %>
+        <!-- <li id="js-navigation-more" class="nav-link more"><a href="javascript:void(0)">More</a>
+          <ul class="submenu">
+            <li><a href="javascript:void(0)">Submenu Item</a></li>
+            <li><a href="javascript:void(0)">Another Item</a></li>
+            <li class="more"><a href="javascript:void(0)">Item with submenu</a>
+              <ul class="submenu">
+                <li><a href="javascript:void(0)">Sub-submenu Item</a></li>
+                <li><a href="javascript:void(0)">Another Item</a></li>
+              </ul>
+            </li>
+            <li class="more"><a href="javascript:void(0)">Another submenu</a>
+              <ul class="submenu">
+                <li><a href="javascript:void(0)">Sub-submenu</a></li>
+                <li><a href="javascript:void(0)">An Item</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li> -->
       </ul>
+    </nav>
+
   </div>
+</header>
+
 
   <% if flash.key?(:notice) %>
     <div class = 'flash-alert'>
@@ -40,19 +69,55 @@
     </div>
   <% end %>
 
+
 <%= yield %>
 
-<footer class="footer" role="contentinfo">
+</div>
+</div>
+
+<footer class="footer-2" role="contentinfo">
+  <div class="footer-logo">
+    <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo image">
+  </div>
+    <ul>
+      <li><%= link_to "About Yappy Trails Club", about_path %></li>
+      <li><%= mail_to "khambro@gmail.com", "Contact" %></li>
+      <!-- <li><a href="javascript:void(0)">Products</a></li> -->
+    </ul>
+
+    <!-- <div class="footer-secondary-links">
+      <ul>
+        <li><a href="javascript:void(0)">Terms and Conditions</a></li>
+        <li><a href="javascript:void(0)">Privacy Policy</a></li>
+      </ul>
+
+      <ul class="footer-social">
+        <li><a href="javascript:void(0)">
+          <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/facebook-logo-circle.png" alt="Facebook">
+          </a></li>
+        <li><a href="javascript:void(0)">
+          <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/twitter-logo-circle.png" alt="Twitter">
+        </a></li>
+        <li><a href="javascript:void(0)">
+          <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/youtube-logo-circle.png" alt="YouTube">
+        </a></li>
+      </ul>
+    </div> -->
+</footer>
+
+
+
+<!-- <footer class="footer" role="contentinfo">
     <ul>
       <li><%= link_to "About Yappy Trails Club", about_path %></li>
       <li><a href="javascript:void(0)">Contact</a></li>
       <li><a href="javascript:void(0)">Products</a></li>
     </ul>
-</footer>
+</footer> -->
 
 
 
-</div>
+
 
 </body>
 </html>
