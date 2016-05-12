@@ -1,0 +1,1483 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Sarala:400,700);
+@import url(https://fonts.googleapis.com/css?family=Lato);
+/* line 4, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/neat/grid/_box-sizing.scss */
+html {
+  box-sizing: border-box;
+}
+
+/* line 9, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/neat/grid/_box-sizing.scss */
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+/* line 1, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_buttons.scss */
+button, [type='button'], [type='reset'], [type='submit'] {
+  appearance: none;
+  background-color: #1565c0;
+  border: 0;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.75em 1.5em;
+  text-decoration: none;
+  transition: background-color 150ms ease;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+/* line 21, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_buttons.scss */
+button:hover, button:focus, [type='button']:hover, [type='button']:focus, [type='reset']:hover, [type='reset']:focus, [type='submit']:hover, [type='submit']:focus {
+  background-color: #11519a;
+  color: #fff;
+}
+/* line 27, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_buttons.scss */
+button:disabled, [type='button']:disabled, [type='reset']:disabled, [type='submit']:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+/* line 31, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_buttons.scss */
+button:disabled:hover, [type='button']:disabled:hover, [type='reset']:disabled:hover, [type='submit']:disabled:hover {
+  background-color: #1565c0;
+}
+
+/* line 1, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_forms.scss */
+fieldset {
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 8, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_forms.scss */
+legend {
+  font-weight: 600;
+  margin-bottom: 0.375em;
+  padding: 0;
+}
+
+/* line 14, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_forms.scss */
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.375em;
+}
+
+/* line 20, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_forms.scss */
+input,
+select,
+textarea {
+  display: block;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 1em;
+}
+
+/* line 28, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_forms.scss */
+[type='color'], [type='date'], [type='datetime'], [type='datetime-local'], [type='email'], [type='month'], [type='number'], [type='password'], [type='search'], [type='tel'], [type='text'], [type='time'], [type='url'], [type='week'], input:not([type]), textarea,
+select[multiple] {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  margin-bottom: 0.75em;
+  padding: 0.5em;
+  transition: border-color 150ms ease;
+  width: 100%;
+}
+/* line 40, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_forms.scss */
+[type='color']:hover, [type='date']:hover, [type='datetime']:hover, [type='datetime-local']:hover, [type='email']:hover, [type='month']:hover, [type='number']:hover, [type='password']:hover, [type='search']:hover, [type='tel']:hover, [type='text']:hover, [type='time']:hover, [type='url']:hover, [type='week']:hover, input:not([type]):hover, textarea:hover,
+select[multiple]:hover {
+  border-color: #b1b1b1;
+}
+/* line 44, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_forms.scss */
+[type='color']:focus, [type='date']:focus, [type='datetime']:focus, [type='datetime-local']:focus, [type='email']:focus, [type='month']:focus, [type='number']:focus, [type='password']:focus, [type='search']:focus, [type='tel']:focus, [type='text']:focus, [type='time']:focus, [type='url']:focus, [type='week']:focus, input:not([type]):focus, textarea:focus,
+select[multiple]:focus {
+  border-color: #1565c0;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(18, 89, 169, 0.7);
+  outline: none;
+}
+/* line 50, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_forms.scss */
+[type='color']:disabled, [type='date']:disabled, [type='datetime']:disabled, [type='datetime-local']:disabled, [type='email']:disabled, [type='month']:disabled, [type='number']:disabled, [type='password']:disabled, [type='search']:disabled, [type='tel']:disabled, [type='text']:disabled, [type='time']:disabled, [type='url']:disabled, [type='week']:disabled, input:not([type]):disabled, textarea:disabled,
+select[multiple]:disabled {
+  background-color: #f2f2f2;
+  cursor: not-allowed;
+}
+/* line 54, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_forms.scss */
+[type='color']:disabled:hover, [type='date']:disabled:hover, [type='datetime']:disabled:hover, [type='datetime-local']:disabled:hover, [type='email']:disabled:hover, [type='month']:disabled:hover, [type='number']:disabled:hover, [type='password']:disabled:hover, [type='search']:disabled:hover, [type='tel']:disabled:hover, [type='text']:disabled:hover, [type='time']:disabled:hover, [type='url']:disabled:hover, [type='week']:disabled:hover, input:not([type]):disabled:hover, textarea:disabled:hover,
+select[multiple]:disabled:hover {
+  border: 1px solid #ddd;
+}
+
+/* line 60, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_forms.scss */
+textarea {
+  resize: vertical;
+}
+
+/* line 64, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_forms.scss */
+[type="search"] {
+  appearance: none;
+}
+
+/* line 68, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_forms.scss */
+[type="checkbox"],
+[type="radio"] {
+  display: inline;
+  margin-right: 0.375em;
+}
+
+/* line 74, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_forms.scss */
+[type="file"] {
+  margin-bottom: 0.75em;
+  width: 100%;
+}
+
+/* line 79, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_forms.scss */
+select {
+  margin-bottom: 0.75em;
+  max-width: 100%;
+  width: auto;
+}
+
+/* line 1, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_layout.scss */
+html {
+  box-sizing: border-box;
+}
+
+/* line 5, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_layout.scss */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* line 1, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_lists.scss */
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 8, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_lists.scss */
+dl {
+  margin: 0;
+}
+
+/* line 12, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_lists.scss */
+dt {
+  font-weight: 600;
+  margin: 0;
+}
+
+/* line 17, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_lists.scss */
+dd {
+  margin: 0;
+}
+
+/* line 1, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_media.scss */
+figure {
+  margin: 0;
+}
+
+/* line 5, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_media.scss */
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}
+
+/* line 1, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_tables.scss */
+table {
+  border-collapse: collapse;
+  margin: 0.75em 0;
+  table-layout: fixed;
+  width: 100%;
+}
+
+/* line 8, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_tables.scss */
+th {
+  border-bottom: 1px solid #a6a6a6;
+  font-weight: 600;
+  padding: 0.75em 0;
+  text-align: left;
+}
+
+/* line 15, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_tables.scss */
+td {
+  border-bottom: 1px solid #ddd;
+  padding: 0.75em 0;
+}
+
+/* line 20, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_tables.scss */
+tr,
+td,
+th {
+  vertical-align: middle;
+}
+
+/* line 1, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_typography.scss */
+body {
+  color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+/* line 8, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_typography.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.25em;
+  line-height: 1.2;
+  margin: 0 0 0.75em;
+}
+
+/* line 20, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_typography.scss */
+p {
+  margin: 0 0 0.75em;
+}
+
+/* line 24, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_typography.scss */
+a {
+  color: #1565c0;
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+/* line 29, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_typography.scss */
+a:active, a:focus, a:hover {
+  color: #104c90;
+}
+
+/* line 36, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/base/_typography.scss */
+hr {
+  border-bottom: 1px solid #ddd;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: 1.5em 0;
+}
+
+/* line 5, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+.grid-items-lines {
+  position: relative;
+}
+/* line 20, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/bourbon/bourbon/library/_clearfix.scss */
+.grid-items-lines::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 23, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+.grid-items-lines .grid-item {
+  background: #fff;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.2);
+  border-right: 1px solid rgba(51, 51, 51, 0.2);
+  cursor: pointer;
+  float: left;
+  height: 14em;
+  overflow: scroll;
+  outline: none;
+  padding: 2em;
+  text-decoration: none;
+  width: 100%;
+}
+@media screen and (min-width: 900px) {
+  /* line 23, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+  .grid-items-lines .grid-item {
+    width: 33.33333%;
+  }
+}
+/* line 41, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+.grid-items-lines .grid-item:focus, .grid-items-lines .grid-item:hover {
+  background: rgba(51, 51, 51, 0.05);
+}
+/* line 47, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+.grid-items-lines .grid-item img {
+  display: block;
+  height: 2.5em;
+  margin-bottom: 1.2em;
+  opacity: 0.2;
+}
+/* line 54, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+.grid-items-lines .grid-item h1 {
+  color: #333;
+  font-size: 1.3em;
+  margin-bottom: 0.4em;
+}
+/* line 60, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+.grid-items-lines .grid-item p {
+  color: rgba(51, 51, 51, 0.6);
+  line-height: 1.5em;
+}
+@media screen and (min-width: 600px) {
+  /* line 60, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+  .grid-items-lines .grid-item p {
+    max-width: 70%;
+  }
+}
+@media screen and (min-width: 900px) {
+  /* line 69, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+  .grid-items-lines .grid-item-big {
+    width: 66.66667%;
+  }
+}
+@media screen and (min-width: 600px) {
+  /* line 73, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+  .grid-items-lines .grid-item-big p {
+    max-width: 60%;
+  }
+}
+/* line 82, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+.grid-items-lines .bottom-cover {
+  background: #fff;
+  bottom: 0px;
+  height: 3px;
+  position: absolute;
+  width: 100%;
+}
+/* line 90, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+.grid-items-lines .right-cover {
+  background: #fff;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  width: 4px;
+}
+
+/* line 101, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+.side-image {
+  background: #F9F9F9;
+}
+@media screen and (min-width: 900px) {
+  /* line 101, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+  .side-image {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+}
+/* line 118, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+.side-image .images-wrapper {
+  background-color: #B5EBEB;
+  background-size: cover;
+  border-bottom: 1px solid rgba(38, 74, 38, 0.2);
+  display: block;
+  min-height: 12em;
+  padding: 3em;
+}
+@media screen and (min-width: 900px) {
+  /* line 118, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+  .side-image .images-wrapper {
+    display: table-cell;
+    width: 33.33333%;
+    background-position: bottom;
+    background-size: cover;
+    border-right: 1px solid rgba(38, 74, 38, 0.2);
+  }
+}
+/* line 134, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+.side-image .side-image-content {
+  display: table-cell;
+  width: 100%;
+  padding: 1em 1em 4em 1em;
+}
+@media screen and (min-width: 900px) {
+  /* line 134, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+  .side-image .side-image-content {
+    display: table-cell;
+    width: 66.66667%;
+    padding: 4em 4em 8em 4em;
+  }
+}
+/* line 143, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+.side-image .side-image-content h1 {
+  margin-bottom: 0.9em;
+}
+/* line 147, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+.side-image .side-image-content h4 {
+  background: #BBB;
+  color: white;
+  display: inline-block;
+  font-size: 0.75em;
+  margin-bottom: 1.3em;
+  padding: 3px 8px;
+  text-transform: uppercase;
+}
+/* line 157, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+.side-image .side-image-content p {
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 3em;
+}
+
+/* line 170, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+.wrapper-for-content-outside-of-footer {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -4em;
+}
+
+/* line 177, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 181, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+.wrapper-for-content-outside-of-footer::after {
+  content: "";
+  display: block;
+}
+
+/* line 186, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+.footer-2, .wrapper-for-content-outside-of-footer::after {
+  height: 17em;
+}
+@media screen and (min-width: 900px) {
+  /* line 186, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+  .footer-2, .wrapper-for-content-outside-of-footer::after {
+    height: 4em;
+  }
+}
+
+/* line 194, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+.footer-2 {
+  background: #1c3653;
+  display: inline-block;
+  padding: 1.5em;
+  width: 100%;
+}
+/* line 209, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+.footer-2 .footer-logo {
+  margin-bottom: 1em;
+  margin-right: 1em;
+}
+@media screen and (min-width: 900px) {
+  /* line 209, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+  .footer-2 .footer-logo {
+    float: left;
+    margin-bottom: 0;
+  }
+}
+/* line 219, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+.footer-2 .footer-logo img {
+  height: 1.6em;
+}
+/* line 223, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+.footer-2 ul {
+  line-height: 1.5em;
+  margin: 0 0 1em 0;
+  padding: 0;
+}
+@media screen and (min-width: 900px) {
+  /* line 223, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+  .footer-2 ul {
+    float: left;
+    line-height: 1.8em;
+    margin-bottom: 0;
+    margin-left: 1em;
+  }
+}
+/* line 236, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+.footer-2 ul li {
+  list-style: none;
+  padding-right: 1em;
+}
+@media screen and (min-width: 900px) {
+  /* line 236, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+  .footer-2 ul li {
+    display: inline;
+    text-align: left;
+  }
+}
+/* line 246, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+.footer-2 ul li a {
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+}
+/* line 250, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+.footer-2 ul li a:focus, .footer-2 ul li a:hover {
+  color: white;
+}
+@media screen and (min-width: 900px) {
+  /* line 256, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+  .footer-2 .footer-secondary-links {
+    float: right;
+  }
+}
+/* line 261, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+.footer-2 .footer-secondary-links li {
+  font-size: 0.8em;
+}
+/* line 265, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+.footer-2 .footer-secondary-links ul.footer-social {
+  margin: 1em 0 0 0;
+}
+@media screen and (min-width: 900px) {
+  /* line 265, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+  .footer-2 .footer-secondary-links ul.footer-social {
+    float: right;
+    margin-top: 0;
+  }
+}
+/* line 273, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+.footer-2 .footer-secondary-links ul.footer-social li {
+  float: left;
+  font-size: 1em;
+  line-height: 0;
+  margin: 0;
+  padding-right: 0.7em;
+}
+/* line 280, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+.footer-2 .footer-secondary-links ul.footer-social li:last-child {
+  padding-right: 0;
+}
+/* line 285, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+.footer-2 .footer-secondary-links ul.footer-social img {
+  height: 1.6em;
+  opacity: 0.7;
+  padding: 1px;
+}
+/* line 290, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+.footer-2 .footer-secondary-links ul.footer-social img:focus, .footer-2 .footer-secondary-links ul.footer-social img:hover {
+  opacity: 1;
+}
+
+/* line 301, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+header.navigation {
+  background-color: #333;
+  border-bottom: 1px solid #1a1a1a;
+  min-height: 60px;
+  width: 100%;
+  z-index: 999;
+}
+/* line 328, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+header.navigation .navigation-wrapper {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 9999;
+}
+/* line 20, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/bourbon/bourbon/library/_clearfix.scss */
+header.navigation .navigation-wrapper::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 20, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/bourbon/bourbon/library/_clearfix.scss */
+header.navigation .navigation-wrapper::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 335, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+header.navigation .logo {
+  float: left;
+  max-height: 60px;
+  padding-left: 1em;
+  padding-right: 2em;
+}
+/* line 341, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+header.navigation .logo img {
+  max-height: 60px;
+  padding: 0.8em 0;
+}
+/* line 349, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+header.navigation .navigation-menu-button {
+  color: rgba(255, 255, 255, 0.7);
+  display: block;
+  float: right;
+  line-height: 60px;
+  margin: 0;
+  padding-right: 1em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 900px) {
+  /* line 349, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+  header.navigation .navigation-menu-button {
+    display: none;
+  }
+}
+/* line 363, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+header.navigation .navigation-menu-button:focus, header.navigation .navigation-menu-button:hover {
+  color: white;
+}
+/* line 371, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+header.navigation nav {
+  float: none;
+  min-height: 60px;
+  z-index: 9999999;
+}
+@media screen and (min-width: 900px) {
+  /* line 371, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+  header.navigation nav {
+    float: left;
+  }
+}
+/* line 381, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+header.navigation ul.navigation-menu {
+  clear: both;
+  display: none;
+  margin: 0 auto;
+  overflow: visible;
+  padding: 0;
+  width: 100%;
+  z-index: 9999;
+}
+/* line 390, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+header.navigation ul.navigation-menu.show {
+  display: block;
+}
+@media screen and (min-width: 900px) {
+  /* line 381, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+  header.navigation ul.navigation-menu {
+    display: inline;
+    margin: 0;
+    padding: 0;
+  }
+}
+/* line 403, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+header.navigation ul li.nav-link {
+  background: #333;
+  display: block;
+  line-height: 60px;
+  overflow: hidden;
+  padding-right: 0.8em;
+  text-align: right;
+  width: 100%;
+  z-index: 9999;
+}
+@media screen and (min-width: 900px) {
+  /* line 403, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+  header.navigation ul li.nav-link {
+    background: transparent;
+    display: inline;
+    line-height: 60px;
+    text-decoration: none;
+    width: auto;
+  }
+}
+/* line 421, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+header.navigation ul li.nav-link a {
+  color: rgba(255, 255, 255, 0.7);
+  display: inline-block;
+  text-decoration: none;
+}
+@media screen and (min-width: 900px) {
+  /* line 421, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+  header.navigation ul li.nav-link a {
+    padding-right: 1em;
+  }
+}
+/* line 430, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+header.navigation ul li.nav-link a:focus, header.navigation ul li.nav-link a:hover {
+  color: white;
+}
+/* line 437, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+header.navigation .active-nav-item a {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  padding-bottom: 3px;
+}
+/* line 444, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+header.navigation li.more.nav-link {
+  padding-right: 0;
+}
+@media screen and (min-width: 900px) {
+  /* line 444, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+  header.navigation li.more.nav-link {
+    padding-right: 1em;
+  }
+}
+/* line 451, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+header.navigation li.more.nav-link > ul > li:first-child a {
+  padding-top: 1em;
+}
+/* line 455, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+header.navigation li.more.nav-link a {
+  margin-right: 1em;
+}
+/* line 459, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+header.navigation li.more.nav-link > a {
+  padding-right: 0.6em;
+}
+/* line 463, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+header.navigation li.more.nav-link > a::after {
+  position: absolute;
+  top: auto;
+  right: -0.4em;
+  bottom: auto;
+  left: auto;
+  color: rgba(255, 255, 255, 0.7);
+  content: "\25BE";
+}
+/* line 470, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+header.navigation li.more {
+  overflow: visible;
+  padding-right: 0;
+}
+/* line 474, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+header.navigation li.more a {
+  padding-right: 0.8em;
+}
+/* line 478, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+header.navigation li.more > a {
+  padding-right: 1.6em;
+  position: relative;
+}
+@media screen and (min-width: 900px) {
+  /* line 478, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+  header.navigation li.more > a {
+    margin-right: 1em;
+  }
+}
+/* line 486, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+header.navigation li.more > a::after {
+  content: "›";
+  font-size: 1.2em;
+  position: absolute;
+  right: 0.5em;
+}
+/* line 494, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+header.navigation li.more:focus > .submenu, header.navigation li.more:hover > .submenu {
+  display: block;
+}
+@media screen and (min-width: 900px) {
+  /* line 470, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+  header.navigation li.more {
+    padding-right: 0.8em;
+    position: relative;
+  }
+}
+/* line 505, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+header.navigation ul.submenu {
+  display: none;
+  padding-left: 0;
+}
+@media screen and (min-width: 900px) {
+  /* line 505, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+  header.navigation ul.submenu {
+    left: -1em;
+    position: absolute;
+    top: 1.5em;
+  }
+}
+@media screen and (min-width: 900px) {
+  /* line 515, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+  header.navigation ul.submenu .submenu.fly-out-right {
+    left: 11.8em;
+    top: 0;
+  }
+}
+@media screen and (min-width: 900px) {
+  /* line 522, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+  header.navigation ul.submenu .submenu.fly-out-left {
+    left: -11.8em;
+    top: 0;
+  }
+}
+@media screen and (min-width: 900px) {
+  /* line 529, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+  header.navigation ul.submenu .submenu {
+    left: 11.8em;
+    top: 0;
+  }
+}
+/* line 536, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+header.navigation ul.submenu li {
+  display: block;
+  padding-right: 0;
+}
+@media screen and (min-width: 900px) {
+  /* line 536, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+  header.navigation ul.submenu li {
+    line-height: 46.15385px;
+  }
+  /* line 543, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+  header.navigation ul.submenu li:first-child > a {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+  }
+  /* line 548, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+  header.navigation ul.submenu li:last-child > a {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    padding-bottom: 0.7em;
+  }
+}
+/* line 555, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+header.navigation ul.submenu li a {
+  background-color: #2b2b2b;
+  display: inline-block;
+  text-align: right;
+  width: 100%;
+}
+@media screen and (min-width: 900px) {
+  /* line 555, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+  header.navigation ul.submenu li a {
+    background-color: #333;
+    padding-left: 1em;
+    text-align: left;
+    width: 12em;
+  }
+}
+/* line 573, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+header.navigation .navigation-tools {
+  background: #505050;
+  clear: both;
+  display: block;
+  height: 60px;
+}
+@media screen and (min-width: 900px) {
+  /* line 573, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+  header.navigation .navigation-tools {
+    background: transparent;
+    clear: none;
+    float: right;
+  }
+}
+/* line 588, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+header.navigation .search-bar {
+  float: left;
+  padding: 0.85em 0.85em 0.7em 0.6em;
+  width: 60%;
+}
+/* line 597, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+header.navigation .search-bar form {
+  position: relative;
+}
+/* line 600, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+header.navigation .search-bar form input[type=search] {
+  background: #404040;
+  border: 1px solid #262626;
+  border-radius: 6px;
+  box-sizing: border-box;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9em;
+  font-style: italic;
+  margin: 0;
+  padding: 0.5em 0.8em;
+  width: 100%;
+}
+@media screen and (min-width: 900px) {
+  /* line 600, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+  header.navigation .search-bar form input[type=search] {
+    width: 100%;
+  }
+}
+/* line 617, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+header.navigation .search-bar form button[type=submit] {
+  background: #404040;
+  border: 0;
+  bottom: 0.3em;
+  left: auto;
+  outline: none;
+  padding: 0 9px;
+  position: absolute;
+  right: 0.3em;
+  top: 0.3em;
+}
+/* line 628, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+header.navigation .search-bar form button[type=submit] img {
+  height: 12px;
+  opacity: 0.7;
+  padding: 1px;
+}
+@media screen and (min-width: 900px) {
+  /* line 588, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+  header.navigation .search-bar {
+    display: inline-block;
+    position: relative;
+    width: 16em;
+  }
+  /* line 641, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/refills_attempt.scss */
+  header.navigation .search-bar input {
+    box-sizing: border-box;
+    display: block;
+  }
+}
+
+/* line 1, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #edf5f6;
+}
+
+/* line 8, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.background {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: url(/assets/golden-535ed3f6eadaf30d341c2f7f9f6289fcbd2ff9d4e443594a46639c2e96f0c4f9.jpg);
+  background-repeat: no-repeat;
+  -moz-background-size: cover;
+}
+
+/* line 22, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.header {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+}
+/* line 89, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.header:last-child {
+  margin-right: 0;
+}
+
+/* line 27, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.header .nav {
+  float: right;
+  display: inline-block;
+  margin-top: 0;
+}
+/* line 33, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.header img {
+  display: inline-block;
+}
+/* line 36, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.header li {
+  margin-top: 0;
+  display: inline-block;
+}
+
+/* line 42, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.notblue {
+  background-color: black;
+  display: inline-block;
+  float: right;
+}
+/* line 43, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.notblue a {
+  color: white;
+}
+/* line 46, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.notblue ul {
+  margin: 0;
+}
+
+/* line 54, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.icon {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+  display: inline-block;
+  margin: 8px;
+}
+/* line 89, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.icon:last-child {
+  margin-right: 0;
+}
+
+/* line 61, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+h1 {
+  text-align: center;
+}
+
+/* line 65, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.title {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 40.29137%;
+  font-family: 'Sarala', sans-serif;
+  font-size: 46px;
+  font-weight: 700;
+  margin-top: 60px;
+  margin-left: 12px;
+}
+/* line 89, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.title:last-child {
+  margin-right: 0;
+}
+
+/* line 74, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.user-type {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 57.35098%;
+  padding-top: 100px;
+  margin-left: 30px;
+}
+/* line 89, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.user-type:last-child {
+  margin-right: 0;
+}
+
+/* line 80, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.owner {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%;
+  display: block;
+  float: left;
+  background-color: #FF686B;
+  font-size: 24px;
+  height: 150px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+/* line 89, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.owner:last-child {
+  margin-right: 0;
+}
+
+/* line 93, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.owner a {
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  padding: 1em;
+  margin: -3em;
+}
+
+/* line 103, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.owner:hover {
+  background-color: #FFA69E;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+/* line 111, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.owner h2 {
+  padding-top: 45px;
+  text-align: center;
+}
+
+/* line 117, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.owner a {
+  color: black;
+}
+
+/* line 121, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.sitter {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%;
+  display: block;
+  float: left;
+  background-color: #84DCC6;
+  border-width: 3px;
+  border-color: rgba(35, 179, 21, 0.7);
+  font-size: 24px;
+  height: 150px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+/* line 89, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.sitter:last-child {
+  margin-right: 0;
+}
+
+/* line 136, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.sitter:hover {
+  cursor: pointer;
+  background-color: #A5FFD6;
+}
+
+/* line 143, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.sitter a {
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  padding: 1em;
+  margin: -3em;
+}
+
+/* line 152, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.sitter h2 {
+  padding-top: 45px;
+  text-align: center;
+}
+
+/* line 157, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.sitter a {
+  color: black;
+}
+
+/* line 161, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.row {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  display: inline-block;
+}
+/* line 89, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.row:last-child {
+  margin-right: 0;
+}
+
+/* line 166, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.sitter-row {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  display: inline-block;
+}
+/* line 89, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.sitter-row:last-child {
+  margin-right: 0;
+}
+/* line 169, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.sitter-row .p-name {
+  text-align: center;
+}
+
+/* line 174, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.animal-info {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  background-color: rgba(157, 162, 231, 0.2);
+}
+/* line 89, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.animal-info:last-child {
+  margin-right: 0;
+}
+
+/* line 180, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.petpic {
+  text-align: right;
+}
+/* line 183, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.petpic img {
+  border-radius: 5%;
+}
+
+/* line 193, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.report-image {
+  margin-left: 25px;
+}
+
+/* line 197, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.user-dash {
+  font-size: 36px;
+}
+
+/* line 202, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.deets {
+  margin: 2px;
+  border-bottom: 0.5px solid rgba(230, 226, 236, 0.3);
+}
+
+/* line 207, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.individual {
+  border: 1px solid #dbc7c4;
+}
+
+/* line 212, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.reportcard {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  border: 1px solid rgba(230, 226, 236, 0.3);
+  display: inline-block;
+  overflow: scroll;
+  height: calc(100vh - 165px);
+}
+/* line 89, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.reportcard:last-child {
+  margin-right: 0;
+}
+
+/* line 221, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+img, picture {
+  @margin-left : 30px;
+}
+
+/* line 225, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.pet-name {
+  font-size: 24px;
+}
+
+/* line 229, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.create-report {
+  display: inline-block;
+  float: right;
+  margin-right: 20px;
+  font-size: 24px;
+  color: #149343;
+}
+
+/* line 237, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.create-report:hover {
+  color: #0fd911;
+}
+
+/* line 241, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.little {
+  color: #149343;
+}
+
+/* line 245, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.little:hover {
+  color: #0fd911;
+}
+
+/* line 249, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.sitterpage {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 82.94039%;
+  margin-left: 8.5298%;
+  display: inline-block;
+  background-color: rgba(224, 213, 244, 0.2);
+}
+/* line 89, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.sitterpage:last-child {
+  margin-right: 0;
+}
+
+/* line 261, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.owner-info {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  background-color: rgba(157, 162, 231, 0.2);
+}
+/* line 89, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.owner-info:last-child {
+  margin-right: 0;
+}
+
+/* line 266, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.left {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 74.41059%;
+}
+/* line 89, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.left:last-child {
+  margin-right: 0;
+}
+
+/* line 270, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.pet-photo {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+  float: right;
+  border-radius: 50%;
+}
+/* line 89, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.pet-photo:last-child {
+  margin-right: 0;
+}
+
+/* line 276, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.jsreport {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 74.41059%;
+  margin-left: 25.58941%;
+  border-bottom: 1px solid #d3e2e6;
+}
+/* line 89, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.jsreport:last-child {
+  margin-right: 0;
+}
+
+/* line 284, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.email-reportcard {
+  border: 1px solid black;
+}
+
+/* line 289, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.clients {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+  display: inline-block;
+}
+/* line 89, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.clients:last-child {
+  margin-right: 0;
+}
+
+/* line 296, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.dashboard {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 65.88078%;
+  margin-left: 8.5298%;
+  display: inline-block;
+}
+/* line 89, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.dashboard:last-child {
+  margin-right: 0;
+}
+
+/* line 304, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.pet {
+  display: inline-block;
+}
+
+/* line 308, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.little-button {
+  background-color: #78e4c4;
+  width: 10px;
+  font-size: 10px;
+  color: white;
+  display: inline-block;
+}
+
+/* line 316, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.little {
+  float: right;
+}
+
+/* line 323, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.ownerpage {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 82.94039%;
+  margin-left: 8.5298%;
+  display: inline-block;
+  background-color: rgba(227, 241, 227, 0.5);
+}
+/* line 89, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.ownerpage:last-child {
+  margin-right: 0;
+}
+
+/* line 332, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.add-pet {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 91.4702%;
+  margin-left: 8.5298%;
+}
+/* line 89, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.add-pet:last-child {
+  margin-right: 0;
+}
+
+/* line 337, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.my-pets {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+  margin-left: 8.5298%;
+  display: inline-block;
+  border-right: 1px solid #f4e9f5;
+}
+/* line 89, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.my-pets:last-child {
+  margin-right: 0;
+}
+
+/* line 345, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.dboards {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 57.35098%;
+}
+/* line 89, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.dboards:last-child {
+  margin-right: 0;
+}
+
+/* line 349, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.sitter-round {
+  border-radius: 50%;
+}
+
+/* line 354, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.my-sitters {
+  margin-top: 20px;
+  border-top: 1px solid #f4e9f5;
+}
+/* line 357, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.my-sitters h2 {
+  margin-top: 15px;
+}
+
+/* line 362, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.profile {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 65.88078%;
+  margin-left: 34.11922%;
+}
+/* line 89, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.profile:last-child {
+  margin-right: 0;
+}
+
+/* line 368, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.sitter-form {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 40.29137%;
+}
+/* line 89, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.sitter-form:last-child {
+  margin-right: 0;
+}
+
+/* line 372, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.sign-in-up h1 {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 40.29137%;
+}
+/* line 89, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.sign-in-up h1:last-child {
+  margin-right: 0;
+}
+
+/* line 378, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.about {
+  font-size: 18px;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  margin-left: 25.58941%;
+  text-align: center;
+}
+/* line 379, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/main.scss */
+.about h1 {
+  font-size: 24px;
+}
+/* line 89, /Users/khambro/Applications/OneDrive/CodeBuildersProjects/paw_prints/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.about:last-child {
+  margin-right: 0;
+}
